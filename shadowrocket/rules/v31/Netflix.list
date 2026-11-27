@@ -1,0 +1,36 @@
+# We Neuro Netflix DOMAIN-SET - v31
+# Derived from blackmatrix7/ios_rule_script; author: blackmatrix7.
+# License: upstream GNU GPL v2; see LICENSE beside this file.
+# Modified 2026-11-27: deterministic domain-only extraction and shared-root exclusions.
+# Source bytes and changes are recorded in sources.lock.json and manifest.json.
+# SOURCE: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/0b6897dc17e0c513d25449c935a9694818e32f0c/rule/Shadowrocket/Netflix/Netflix.list
+.fast.com
+.flxvpn.net
+.netflix.ca
+.netflix.com
+.netflix.com.au
+.netflix.com.edgesuite.net
+.netflix.net
+.netflixdnstest0.com
+.netflixdnstest1.com
+.netflixdnstest10.com
+.netflixdnstest2.com
+.netflixdnstest3.com
+.netflixdnstest4.com
+.netflixdnstest5.com
+.netflixdnstest6.com
+.netflixdnstest7.com
+.netflixdnstest8.com
+.netflixdnstest9.com
+.netflixinvestor.com
+.netflixstudios.com
+.netflixtechblog.com
+.nflxext.com
+.nflximg.com
+.nflximg.net
+.nflxsearch.net
+.nflxso.net
+.nflxvideo.net
+e13252.dscg.akamaiedge.net
+h-netflix.online-metrix.net
+netflix.com.edgesuite.net

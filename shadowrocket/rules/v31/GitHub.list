@@ -1,0 +1,36 @@
+# We Neuro GitHub DOMAIN-SET - v31
+# Derived from blackmatrix7/ios_rule_script; author: blackmatrix7.
+# License: upstream GNU GPL v2; see LICENSE beside this file.
+# Modified 2026-11-27: deterministic domain-only extraction and shared-root exclusions.
+# Source bytes and changes are recorded in sources.lock.json and manifest.json.
+# SOURCE: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/0b6897dc17e0c513d25449c935a9694818e32f0c/rule/Shadowrocket/GitHub/GitHub.list
+.atom.io
+.dependabot.com
+.ghcr.io
+.git.io
+.github-atom-io-herokuapp-com.freetls.fastly.net
+.github-avatars.oss-cn-hongkong.aliyuncs.com
+.github-cloud.s3.amazonaws.com
+.github.blog
+.github.com
+.github.community
+.github.dev
+.github.io
+.githubapp.com
+.githubassets.com
+.githubcopilot.com
+.githubhackathon.com
+.githubnext.com
+.githubpreview.dev
+.githubstatus.com
+.githubuniverse.com
+.githubusercontent.com
+.myoctocat.com
+.npm.community
+.npmjs.com
+.npmjs.org
+.opensource.guide
+.rawgit.com
+.rawgithub.com
+.repo.new
+.thegithubshop.com

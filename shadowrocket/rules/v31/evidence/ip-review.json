@@ -1,0 +1,36 @@
+{
+  "reviewed": "2026-11-27",
+  "sources": [
+    {
+      "file": "google-owned.json",
+      "url": "https://www.gstatic.com/ipranges/goog.json",
+      "sha256": "3e30e0a278d0747f9ecb9425cc19e75647234a059210e80026e8913d1ec87ad1",
+      "bytes": 6315
+    },
+    {
+      "file": "google-cloud-customers.json",
+      "url": "https://www.gstatic.com/ipranges/cloud.json",
+      "sha256": "0a93ca2601187b1f5c2dfbc6f27bd0f00e4cb81962a17482c00de4f1f5279b0c",
+      "bytes": 117975
+    },
+    {
+      "file": "telegram-cidr.txt",
+      "url": "https://core.telegram.org/resources/cidr.txt",
+      "sha256": "3ecd072cedf72eceee6961b18a51e37f905d5ce4a656a5d24cf5fea63e6ec651",
+      "bytes": 227
+    }
+  ],
+  "google_kept_prefixes": [
+    "172.110.32.0/21",
+    "173.194.0.0/16",
+    "216.73.80.0/20",
+    "2620:120:e000::/40",
+    "74.125.0.0/16"
+  ],
+  "google_scope": "Retain only these existing v30 prefixes, each in the owned set and disjoint from Cloud customer ranges. Not all Google networks.",
+  "apple_kept_prefixes": [
+    "17.0.0.0/8"
+  ],
+  "apple_source": "https://support.apple.com/en-us/102266",
+  "apple_scope": "Apple-assigned network fallback, not an APNs-only rule."
+}

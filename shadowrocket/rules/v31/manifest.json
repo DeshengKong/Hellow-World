@@ -1,0 +1,965 @@
+{
+  "schema": 1,
+  "release": "v31",
+  "reviewed": "2026-11-27",
+  "upstream": {
+    "repository": "blackmatrix7/ios_rule_script",
+    "commit": "0b6897dc17e0c513d25449c935a9694818e32f0c",
+    "license": "GPL-2.0 (full upstream text in rules/v31/LICENSE)"
+  },
+  "files": [
+    {
+      "file": "STUN.list",
+      "sha256": "a12400fe139d680aaae464d2fadb579a82d90c78c501717618079f57d5fb4770",
+      "bytes": 6712,
+      "records": 350,
+      "source_ids": [
+        0
+      ],
+      "input_types": {
+        "DOMAIN": 350,
+        "IP-CIDR": 16
+      },
+      "removed_non_domain_types": {
+        "IP-CIDR": 16
+      },
+      "removed_domains": []
+    },
+    {
+      "file": "MainlandFinance.list",
+      "sha256": "e734cc78a990b10765b86c19f38e614efe584708aaaf06cbef3cd046aeadc951",
+      "bytes": 6049,
+      "records": 264,
+      "source_ids": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "input_types": {
+        "DOMAIN": 8,
+        "DOMAIN-SUFFIX": 256,
+        "IP-ASN": 1,
+        "USER-AGENT": 2
+      },
+      "removed_non_domain_types": {
+        "IP-ASN": 1,
+        "USER-AGENT": 2
+      },
+      "removed_domains": []
+    },
+    {
+      "file": "ProtonMail.list",
+      "sha256": "0483fa0fe3867c4eec23ecdd8cb65c6bc507b9aad2ecfdd4104ed9881ca29f5c",
+      "bytes": 562,
+      "records": 5,
+      "source_ids": [
+        16
+      ],
+      "input_types": {
+        "DOMAIN-SUFFIX": 5
+      },
+      "removed_non_domain_types": {},
+      "removed_domains": []
+    },
+    {
+      "file": "YouTube.list",
+      "sha256": "acc111342232816d7d6e1f5a6e88901abbc86388e927ba9aa00d0b6511354a7e",
+      "bytes": 3048,
+      "records": 179,
+      "source_ids": [
+        17
+      ],
+      "input_types": {
+        "DOMAIN-KEYWORD": 1,
+        "DOMAIN-SUFFIX": 179,
+        "IP-CIDR": 3,
+        "USER-AGENT": 7
+      },
+      "removed_non_domain_types": {
+        "DOMAIN-KEYWORD": 1,
+        "IP-CIDR": 3,
+        "USER-AGENT": 7
+      },
+      "removed_domains": []
+    },
+    {
+      "file": "Google.list",
+      "sha256": "67b7b0b911aecd4faa16857458450b76c3de939df650553ea9d3862bcca6f627",
+      "bytes": 10748,
+      "records": 685,
+      "source_ids": [
+        18
+      ],
+      "input_types": {
+        "DOMAIN": 1,
+        "DOMAIN-KEYWORD": 5,
+        "DOMAIN-SUFFIX": 684,
+        "IP-CIDR": 5,
+        "USER-AGENT": 3
+      },
+      "removed_non_domain_types": {
+        "DOMAIN-KEYWORD": 5,
+        "IP-CIDR": 5,
+        "USER-AGENT": 3
+      },
+      "removed_domains": []
+    },
+    {
+      "file": "GitHub.list",
+      "sha256": "69b6386eba0b51c6d52aff5b72063ae969ff02658a82d4f025ce55475bc8e653",
+      "bytes": 1011,
+      "records": 30,
+      "source_ids": [
+        20
+      ],
+      "input_types": {
+        "DOMAIN-KEYWORD": 1,
+        "DOMAIN-SUFFIX": 30
+      },
+      "removed_non_domain_types": {
+        "DOMAIN-KEYWORD": 1
+      },
+      "removed_domains": []
+    },
+    {
+      "file": "Netflix.list",
+      "sha256": "475984b13628d7413cc8ab84a607d9b50f0048d8f989f43614cfd938f356c5f9",
+      "bytes": 1046,
+      "records": 30,
+      "source_ids": [
+        21
+      ],
+      "input_types": {
+        "DOMAIN": 3,
+        "DOMAIN-KEYWORD": 4,
+        "DOMAIN-SUFFIX": 30,
+        "IP-CIDR": 1119,
+        "USER-AGENT": 1
+      },
+      "removed_non_domain_types": {
+        "DOMAIN-KEYWORD": 4,
+        "IP-CIDR": 1119,
+        "USER-AGENT": 1
+      },
+      "removed_domains": [
+        {
+          "source_id": 21,
+          "record": ".cookielaw.org",
+          "reason": "通用同意管理/CDN平台，不具Netflix租户限定；Netflix条目会抢占其他网站的同意管理请求。"
+        },
+        {
+          "source_id": 21,
+          "record": ".onetrust.com",
+          "reason": "通用同意管理/CDN平台，不具Netflix租户限定；Netflix条目会抢占其他网站的同意管理请求。"
+        },
+        {
+          "source_id": 21,
+          "record": ".us-west-2.amazonaws.com",
+          "reason": "AWS整个Oregon区域根；不是Netflix专属服务标识，任意客户该区域端点会被Netflix接管。"
+        }
+      ]
+    },
+    {
+      "file": "Disney.list",
+      "sha256": "227b59f1216b32f9eb821037d86fbe05de8b4c3190d8dcc1ff928e1eb1438f88",
+      "bytes": 3461,
+      "records": 164,
+      "source_ids": [
+        22
+      ],
+      "input_types": {
+        "DOMAIN-SUFFIX": 172,
+        "USER-AGENT": 1
+      },
+      "removed_non_domain_types": {
+        "USER-AGENT": 1
+      },
+      "removed_domains": [
+        {
+          "source_id": 22,
+          "record": ".adobedtm.com",
+          "reason": "Adobe Tags公共脚本CDN，客户通过路径/配置ID区分；不能整根归Disney。"
+        },
+        {
+          "source_id": 22,
+          "record": ".bam.nr-data.net",
+          "reason": "New Relic跨客户浏览器采集/脚本端点，域名不含Disney租户。"
+        },
+        {
+          "source_id": 22,
+          "record": ".braze.com",
+          "reason": "Braze SDK区域共享端点，客户通过API key区分，不是Disney专属域。"
+        },
+        {
+          "source_id": 22,
+          "record": ".cdn.optimizely.com",
+          "reason": "Optimizely跨客户脚本CDN，项目ID位于URL路径，不能按该主机整站归Disney。"
+        },
+        {
+          "source_id": 22,
+          "record": ".conviva.com",
+          "reason": "未限定Disney租户的第三方分析/广告服务；专用业务策略不应占有整个平台或公共采集端点。"
+        },
+        {
+          "source_id": 22,
+          "record": ".d9.flashtalking.com",
+          "reason": "未限定Disney租户的第三方分析/广告服务；专用业务策略不应占有整个平台或公共采集端点。"
+        },
+        {
+          "source_id": 22,
+          "record": ".execute-api.us-east-1.amazonaws.com",
+          "reason": "AWS整个区域的API Gateway根，缺少API-ID租户标签；会抢走无关客户API。"
+        },
+        {
+          "source_id": 22,
+          "record": ".js-agent.newrelic.com",
+          "reason": "New Relic跨客户浏览器采集/脚本端点，域名不含Disney租户。"
+        }
+      ]
+    },
+    {
+      "file": "Max.list",
+      "sha256": "b22420f502e96104aa76f5a1505e2c433f0c3c6e4554309d5a87f8222f5770ce",
+      "bytes": 1199,
+      "records": 41,
+      "source_ids": [
+        23
+      ],
+      "input_types": {
+        "DOMAIN-SUFFIX": 47,
+        "USER-AGENT": 2
+      },
+      "removed_non_domain_types": {
+        "USER-AGENT": 2
+      },
+      "removed_domains": [
+        {
+          "source_id": 23,
+          "record": ".cf-images.ap-southeast-1.prod.boltdns.net",
+          "reason": "Brightcove公共图片/清单/播放器主机，租户通常在请求路径或参数区分，不能将所有客户归HBO/Max。"
+        },
+        {
+          "source_id": 23,
+          "record": ".execute-api.ap-southeast-1.amazonaws.com",
+          "reason": "AWS区域API Gateway共享父域，未限定某个API-ID。"
+        },
+        {
+          "source_id": 23,
+          "record": ".execute-api.us-east-1.amazonaws.com",
+          "reason": "AWS区域API Gateway共享父域，未限定某个API-ID。"
+        },
+        {
+          "source_id": 23,
+          "record": ".manifest.prod.boltdns.net",
+          "reason": "Brightcove公共图片/清单/播放器主机，租户通常在请求路径或参数区分，不能将所有客户归HBO/Max。"
+        },
+        {
+          "source_id": 23,
+          "record": ".players.brightcove.net",
+          "reason": "Brightcove公共图片/清单/播放器主机，租户通常在请求路径或参数区分，不能将所有客户归HBO/Max。"
+        },
+        {
+          "source_id": 23,
+          "record": ".youboranqs01.com",
+          "reason": "没有HBO租户限制的第三方测量域；应归通用代理，只有可确认专用租户才回添到HBO。"
+        }
+      ]
+    },
+    {
+      "file": "Spotify.list",
+      "sha256": "52720e35f06f854baa0a476a96194f6ad9639d03b9f80ace7dca55c56116843c",
+      "bytes": 1045,
+      "records": 26,
+      "source_ids": [
+        24
+      ],
+      "input_types": {
+        "DOMAIN": 6,
+        "DOMAIN-KEYWORD": 1,
+        "DOMAIN-SUFFIX": 20,
+        "IP-CIDR": 2,
+        "USER-AGENT": 1
+      },
+      "removed_non_domain_types": {
+        "DOMAIN-KEYWORD": 1,
+        "IP-CIDR": 2,
+        "USER-AGENT": 1
+      },
+      "removed_domains": []
+    },
+    {
+      "file": "Telegram.list",
+      "sha256": "987564ada82503d65ada4802cc8f2416380e760bbb06feb9f0f40e601a514504",
+      "bytes": 807,
+      "records": 24,
+      "source_ids": [
+        25
+      ],
+      "input_types": {
+        "DOMAIN": 2,
+        "DOMAIN-KEYWORD": 1,
+        "DOMAIN-SUFFIX": 22,
+        "IP-ASN": 5,
+        "IP-CIDR": 10
+      },
+      "removed_non_domain_types": {
+        "DOMAIN-KEYWORD": 1,
+        "IP-ASN": 5,
+        "IP-CIDR": 10
+      },
+      "removed_domains": []
+    },
+    {
+      "file": "PayPal.list",
+      "sha256": "6c2282127aaa98063a4a73a846e1f3b2e566e939108ce446108789a8eab60c21",
+      "bytes": 4908,
+      "records": 246,
+      "source_ids": [
+        26
+      ],
+      "input_types": {
+        "DOMAIN-KEYWORD": 1,
+        "DOMAIN-SUFFIX": 246,
+        "USER-AGENT": 1
+      },
+      "removed_non_domain_types": {
+        "DOMAIN-KEYWORD": 1,
+        "USER-AGENT": 1
+      },
+      "removed_domains": []
+    },
+    {
+      "file": "Twitter.list",
+      "sha256": "1023f1b078529cc36633fd4d5f04a29606dbbfcb3001675b6c48258d63884414",
+      "bytes": 839,
+      "records": 26,
+      "source_ids": [
+        27
+      ],
+      "input_types": {
+        "DOMAIN-KEYWORD": 1,
+        "DOMAIN-SUFFIX": 26,
+        "IP-CIDR": 6
+      },
+      "removed_non_domain_types": {
+        "DOMAIN-KEYWORD": 1,
+        "IP-CIDR": 6
+      },
+      "removed_domains": []
+    },
+    {
+      "file": "Facebook.list",
+      "sha256": "5e2725cf0ea7b52795e0efa38fa47b593985106a6471e349a8211b62f939eabf",
+      "bytes": 9687,
+      "records": 543,
+      "source_ids": [
+        28
+      ],
+      "input_types": {
+        "DOMAIN-KEYWORD": 2,
+        "DOMAIN-SUFFIX": 544,
+        "IP-ASN": 1,
+        "IP-CIDR": 23
+      },
+      "removed_non_domain_types": {
+        "DOMAIN-KEYWORD": 2,
+        "IP-ASN": 1,
+        "IP-CIDR": 23
+      },
+      "removed_domains": [
+        {
+          "source_id": 28,
+          "record": ".ip6.static.sl-reverse.com",
+          "reason": "基础设施反向命名空间父域没有Facebook租户限定；不应把其他云客户IPv6反向主机归Facebook。"
+        }
+      ]
+    },
+    {
+      "file": "Amazon.list",
+      "sha256": "66a52a676f31db5a88fda25bfdc6cfbaa95734c3af56898449433b1df432c86e",
+      "bytes": 3494,
+      "records": 179,
+      "source_ids": [
+        29
+      ],
+      "input_types": {
+        "DOMAIN-KEYWORD": 1,
+        "DOMAIN-SUFFIX": 186,
+        "IP-CIDR": 15,
+        "URL-REGEX": 1,
+        "USER-AGENT": 2
+      },
+      "removed_non_domain_types": {
+        "DOMAIN-KEYWORD": 1,
+        "IP-CIDR": 15,
+        "URL-REGEX": 1,
+        "USER-AGENT": 2
+      },
+      "removed_domains": [
+        {
+          "source_id": 29,
+          "record": ".amazonaws.com",
+          "reason": "云平台多租户托管根，包含任意客户的API、对象、CDN或应用；Amazon电商业务组不应接管整个平台。"
+        },
+        {
+          "source_id": 29,
+          "record": ".amazonaws.com.cn",
+          "reason": "云平台多租户托管根，包含任意客户的API、对象、CDN或应用；Amazon电商业务组不应接管整个平台。"
+        },
+        {
+          "source_id": 29,
+          "record": ".amazontrust.com",
+          "reason": "Public certificate authority serves unrelated applications; do not inherit a consumer service selector for the entire CA namespace. Normal fallback remains available."
+        },
+        {
+          "source_id": 29,
+          "record": ".amplifyapp.com",
+          "reason": "云平台多租户托管根，包含任意客户的API、对象、CDN或应用；Amazon电商业务组不应接管整个平台。"
+        },
+        {
+          "source_id": 29,
+          "record": ".cloudfront.net",
+          "reason": "云平台多租户托管根，包含任意客户的API、对象、CDN或应用；Amazon电商业务组不应接管整个平台。"
+        },
+        {
+          "source_id": 29,
+          "record": ".elasticbeanstalk.com",
+          "reason": "云平台多租户托管根，包含任意客户的API、对象、CDN或应用；Amazon电商业务组不应接管整个平台。"
+        },
+        {
+          "source_id": 29,
+          "record": ".llnwd.net",
+          "reason": "跨客户视频CDN父域，Brightcove等非Amazon服务也使用；不是Amazon专用。"
+        }
+      ]
+    },
+    {
+      "file": "TikTok.list",
+      "sha256": "e15b93bbadebbb7ab76be796570538da4fd699c9bc3bfc957ddae463b297f994",
+      "bytes": 993,
+      "records": 31,
+      "source_ids": [
+        30
+      ],
+      "input_types": {
+        "DOMAIN": 4,
+        "DOMAIN-KEYWORD": 2,
+        "DOMAIN-SUFFIX": 28,
+        "USER-AGENT": 1
+      },
+      "removed_non_domain_types": {
+        "DOMAIN-KEYWORD": 2,
+        "USER-AGENT": 1
+      },
+      "removed_domains": [
+        {
+          "source_id": 30,
+          "record": ".snssdk.com",
+          "reason": "ByteDance shared domestic SDK namespace includes Douyin login/payment; do not classify the entire root as international TikTok. ChinaApps retains domestic handling, with two verified critical hosts explicit in the main profile."
+        }
+      ]
+    },
+    {
+      "file": "Games.list",
+      "sha256": "83420c2dc6ce86750eb59f8f66e11f84b01b1641cb910907d023a4f1ac86ef24",
+      "bytes": 13348,
+      "records": 675,
+      "source_ids": [
+        31,
+        32,
+        33,
+        34,
+        35,
+        36
+      ],
+      "input_types": {
+        "DOMAIN": 21,
+        "DOMAIN-KEYWORD": 7,
+        "DOMAIN-SUFFIX": 856,
+        "IP-CIDR": 71
+      },
+      "removed_non_domain_types": {
+        "DOMAIN-KEYWORD": 7,
+        "IP-CIDR": 71
+      },
+      "removed_domains": [
+        {
+          "source_id": 33,
+          "record": ".helpshift.com",
+          "reason": "跨客户客服平台，租户为品牌子域，不能整根归Epic。"
+        },
+        {
+          "source_id": 36,
+          "record": ".helpshift.com",
+          "reason": "跨客户客服平台，不能将非游戏客户请求一起归游戏平台。"
+        }
+      ]
+    },
+    {
+      "file": "Apple.list",
+      "sha256": "098d54fe5e691cce70b6f90f4718c93ddb45e597707245387c60f1b50bec3b36",
+      "bytes": 29970,
+      "records": 1557,
+      "source_ids": [
+        37,
+        38
+      ],
+      "input_types": {
+        "DOMAIN": 9,
+        "DOMAIN-KEYWORD": 7,
+        "DOMAIN-SUFFIX": 1550,
+        "IP-CIDR": 13,
+        "USER-AGENT": 23
+      },
+      "removed_non_domain_types": {
+        "DOMAIN-KEYWORD": 7,
+        "IP-CIDR": 13,
+        "USER-AGENT": 23
+      },
+      "removed_domains": [
+        {
+          "source_id": 37,
+          "record": ".akadns.net",
+          "reason": "Akamai GTM customer namespace is shared; it must not inherit Apple DIRECT. Specific Apple CDN tenants remain earlier."
+        },
+        {
+          "source_id": 37,
+          "record": ".digicert.com",
+          "reason": "Independent public certificate authority is not Apple-exclusive; retain normal routing rather than classifying the entire CA namespace as Apple."
+        }
+      ]
+    },
+    {
+      "file": "Microsoft.list",
+      "sha256": "ce1e14fb1ed3a9bc4a35d8b593c56f4e6e1e52bcbecd4fc7dd22d5c90dc5f3dc",
+      "bytes": 11108,
+      "records": 609,
+      "source_ids": [
+        39
+      ],
+      "input_types": {
+        "DOMAIN": 1,
+        "DOMAIN-KEYWORD": 4,
+        "DOMAIN-SUFFIX": 663,
+        "USER-AGENT": 3
+      },
+      "removed_non_domain_types": {
+        "DOMAIN-KEYWORD": 4,
+        "USER-AGENT": 3
+      },
+      "removed_domains": [
+        {
+          "source_id": 39,
+          "record": ".akadns.net",
+          "reason": "Akamai GTM is shared across customers; removing it from Apple must not allow Microsoft/China to recapture it as DIRECT."
+        },
+        {
+          "source_id": 39,
+          "record": ".azure-api.cn",
+          "reason": "属于Azure客户运行时/多租户服务域家族，未在本轮第一方资料逐项确认此确切后缀；保守方案不赋予DIRECT，使用通用出口；如需保留，先提供专用tenant或第一方端点证据。"
+        },
+        {
+          "source_id": 39,
+          "record": ".azure-apihub.cn",
+          "reason": "属于Azure客户运行时/多租户服务域家族，未在本轮第一方资料逐项确认此确切后缀；保守方案不赋予DIRECT，使用通用出口；如需保留，先提供专用tenant或第一方端点证据。"
+        },
+        {
+          "source_id": 39,
+          "record": ".azure-apim.net",
+          "reason": "跨客户连接器/API运行时根，不能整体认为是Office自有网页；租户/连接器也可能访问第三方API。"
+        },
+        {
+          "source_id": 39,
+          "record": ".azure-automation.cn",
+          "reason": "属于Azure客户运行时/多租户服务域家族，未在本轮第一方资料逐项确认此确切后缀；保守方案不赋予DIRECT，使用通用出口；如需保留，先提供专用tenant或第一方端点证据。"
+        },
+        {
+          "source_id": 39,
+          "record": ".azure-devices-provisioning.cn",
+          "reason": "属于Azure客户运行时/多租户服务域家族，未在本轮第一方资料逐项确认此确切后缀；保守方案不赋予DIRECT，使用通用出口；如需保留，先提供专用tenant或第一方端点证据。"
+        },
+        {
+          "source_id": 39,
+          "record": ".azure-devices.cn",
+          "reason": "属于Azure客户运行时/多租户服务域家族，未在本轮第一方资料逐项确认此确切后缀；保守方案不赋予DIRECT，使用通用出口；如需保留，先提供专用tenant或第一方端点证据。"
+        },
+        {
+          "source_id": 39,
+          "record": ".azure-devices.net",
+          "reason": "Azure客户IoT、实时通信、工作区租户根，应由具体应用规则或通用出口处理。"
+        },
+        {
+          "source_id": 39,
+          "record": ".azure-mobile.net",
+          "reason": "Azure网站、CDN、虚机、容器、移动应用或流量管理的多租户根，非Microsoft自有网站专属。"
+        },
+        {
+          "source_id": 39,
+          "record": ".azure.cn",
+          "reason": "父域包含客户自定义资源名/数据平面（存储、数据库、计算、密钥库等）；不得用Microsoft默认DIRECT接管全部。需回添精确控制台/身份入口。"
+        },
+        {
+          "source_id": 39,
+          "record": ".azure.com",
+          "reason": "父域包含客户自定义资源名/数据平面（存储、数据库、计算、密钥库等）；不得用Microsoft默认DIRECT接管全部。需回添精确控制台/身份入口。"
+        },
+        {
+          "source_id": 39,
+          "record": ".azure.net",
+          "reason": "父域包含客户自定义资源名/数据平面（存储、数据库、计算、密钥库等）；不得用Microsoft默认DIRECT接管全部。需回添精确控制台/身份入口。"
+        },
+        {
+          "source_id": 39,
+          "record": ".azurecomm.net",
+          "reason": "属于Azure客户运行时/多租户服务域家族，未在本轮第一方资料逐项确认此确切后缀；保守方案不赋予DIRECT，使用通用出口；如需保留，先提供专用tenant或第一方端点证据。"
+        },
+        {
+          "source_id": 39,
+          "record": ".azurecontainer.io",
+          "reason": "Azure网站、CDN、虚机、容器、移动应用或流量管理的多租户根，非Microsoft自有网站专属。"
+        },
+        {
+          "source_id": 39,
+          "record": ".azurecosmos.net",
+          "reason": "属于Azure客户运行时/多租户服务域家族，未在本轮第一方资料逐项确认此确切后缀；保守方案不赋予DIRECT，使用通用出口；如需保留，先提供专用tenant或第一方端点证据。"
+        },
+        {
+          "source_id": 39,
+          "record": ".azurecosmosdb.com",
+          "reason": "属于Azure客户运行时/多租户服务域家族，未在本轮第一方资料逐项确认此确切后缀；保守方案不赋予DIRECT，使用通用出口；如需保留，先提供专用tenant或第一方端点证据。"
+        },
+        {
+          "source_id": 39,
+          "record": ".azurecosmosdb.info",
+          "reason": "属于Azure客户运行时/多租户服务域家族，未在本轮第一方资料逐项确认此确切后缀；保守方案不赋予DIRECT，使用通用出口；如需保留，先提供专用tenant或第一方端点证据。"
+        },
+        {
+          "source_id": 39,
+          "record": ".azurecosmosdb.net",
+          "reason": "属于Azure客户运行时/多租户服务域家族，未在本轮第一方资料逐项确认此确切后缀；保守方案不赋予DIRECT，使用通用出口；如需保留，先提供专用tenant或第一方端点证据。"
+        },
+        {
+          "source_id": 39,
+          "record": ".azurecr.cn",
+          "reason": "属于Azure客户运行时/多租户服务域家族，未在本轮第一方资料逐项确认此确切后缀；保守方案不赋予DIRECT，使用通用出口；如需保留，先提供专用tenant或第一方端点证据。"
+        },
+        {
+          "source_id": 39,
+          "record": ".azuredatabricks.net",
+          "reason": "Azure客户IoT、实时通信、工作区租户根，应由具体应用规则或通用出口处理。"
+        },
+        {
+          "source_id": 39,
+          "record": ".azuredigitaltwins.net",
+          "reason": "属于Azure客户运行时/多租户服务域家族，未在本轮第一方资料逐项确认此确切后缀；保守方案不赋予DIRECT，使用通用出口；如需保留，先提供专用tenant或第一方端点证据。"
+        },
+        {
+          "source_id": 39,
+          "record": ".azureedge.net",
+          "reason": "Azure网站、CDN、虚机、容器、移动应用或流量管理的多租户根，非Microsoft自有网站专属。"
+        },
+        {
+          "source_id": 39,
+          "record": ".azurefd.net",
+          "reason": "Azure网站、CDN、虚机、容器、移动应用或流量管理的多租户根，非Microsoft自有网站专属。"
+        },
+        {
+          "source_id": 39,
+          "record": ".azurefd.us",
+          "reason": "属于Azure客户运行时/多租户服务域家族，未在本轮第一方资料逐项确认此确切后缀；保守方案不赋予DIRECT，使用通用出口；如需保留，先提供专用tenant或第一方端点证据。"
+        },
+        {
+          "source_id": 39,
+          "record": ".azurehdinsight.cn",
+          "reason": "Azure中国区客户工作负载/路由根，不能仅因云提供商是Microsoft而全局DIRECT；精确控制台和身份端点另留。"
+        },
+        {
+          "source_id": 39,
+          "record": ".azureiotcentral.com",
+          "reason": "Azure客户IoT、实时通信、工作区租户根，应由具体应用规则或通用出口处理。"
+        },
+        {
+          "source_id": 39,
+          "record": ".azureserviceprofiler.com",
+          "reason": "属于Azure客户运行时/多租户服务域家族，未在本轮第一方资料逐项确认此确切后缀；保守方案不赋予DIRECT，使用通用出口；如需保留，先提供专用tenant或第一方端点证据。"
+        },
+        {
+          "source_id": 39,
+          "record": ".azuresmartspaces.net",
+          "reason": "属于Azure客户运行时/多租户服务域家族，未在本轮第一方资料逐项确认此确切后缀；保守方案不赋予DIRECT，使用通用出口；如需保留，先提供专用tenant或第一方端点证据。"
+        },
+        {
+          "source_id": 39,
+          "record": ".azurewebsites.net",
+          "reason": "Azure网站、CDN、虚机、容器、移动应用或流量管理的多租户根，非Microsoft自有网站专属。"
+        },
+        {
+          "source_id": 39,
+          "record": ".b.akamaiedge.net",
+          "reason": "Akamai多客户CDN命名空间父域；保留已限定租户/精确主机的微软条目，不保留公共父域。"
+        },
+        {
+          "source_id": 39,
+          "record": ".chinacloud-mobile.cn",
+          "reason": "Azure中国区客户工作负载/路由根，不能仅因云提供商是Microsoft而全局DIRECT；精确控制台和身份端点另留。"
+        },
+        {
+          "source_id": 39,
+          "record": ".chinacloudapi.cn",
+          "reason": "Azure中国区客户工作负载/路由根，不能仅因云提供商是Microsoft而全局DIRECT；精确控制台和身份端点另留。"
+        },
+        {
+          "source_id": 39,
+          "record": ".chinacloudapp.cn",
+          "reason": "Azure中国区客户工作负载/路由根，不能仅因云提供商是Microsoft而全局DIRECT；精确控制台和身份端点另留。"
+        },
+        {
+          "source_id": 39,
+          "record": ".chinacloudsites.cn",
+          "reason": "Azure中国区客户工作负载/路由根，不能仅因云提供商是Microsoft而全局DIRECT；精确控制台和身份端点另留。"
+        },
+        {
+          "source_id": 39,
+          "record": ".cloudapp.net",
+          "reason": "Azure网站、CDN、虚机、容器、移动应用或流量管理的多租户根，非Microsoft自有网站专属。"
+        },
+        {
+          "source_id": 39,
+          "record": ".cosmosdb.info",
+          "reason": "属于Azure客户运行时/多租户服务域家族，未在本轮第一方资料逐项确认此确切后缀；保守方案不赋予DIRECT，使用通用出口；如需保留，先提供专用tenant或第一方端点证据。"
+        },
+        {
+          "source_id": 39,
+          "record": ".cosmosdb.net",
+          "reason": "属于Azure客户运行时/多租户服务域家族，未在本轮第一方资料逐项确认此确切后缀；保守方案不赋予DIRECT，使用通用出口；如需保留，先提供专用tenant或第一方端点证据。"
+        },
+        {
+          "source_id": 39,
+          "record": ".edgesuite.net",
+          "reason": "Akamai多客户CDN命名空间父域；保留已限定租户/精确主机的微软条目，不保留公共父域。"
+        },
+        {
+          "source_id": 39,
+          "record": ".fabric.io",
+          "reason": "跨服务品牌边界：不是微软自有业务专属，Google分类若已有前置覆盖仍应清除这里的重复归属；不可据此证明所有子域当前归属。"
+        },
+        {
+          "source_id": 39,
+          "record": ".g.akamaiedge.net",
+          "reason": "Akamai多客户CDN命名空间父域；保留已限定租户/精确主机的微软条目，不保留公共父域。"
+        },
+        {
+          "source_id": 39,
+          "record": ".helpshift.com",
+          "reason": "跨客户客服平台，不是Microsoft专用。"
+        },
+        {
+          "source_id": 39,
+          "record": ".hockeyapp.net",
+          "reason": "跨客户分析/应用分发或反馈平台，没有Microsoft单一租户限定；应回归通用出口。"
+        },
+        {
+          "source_id": 39,
+          "record": ".localytics.com",
+          "reason": "跨客户分析/应用分发或反馈平台，没有Microsoft单一租户限定；应回归通用出口。"
+        },
+        {
+          "source_id": 39,
+          "record": ".msappproxy.cn",
+          "reason": "属于Azure客户运行时/多租户服务域家族，未在本轮第一方资料逐项确认此确切后缀；保守方案不赋予DIRECT，使用通用出口；如需保留，先提供专用tenant或第一方端点证据。"
+        },
+        {
+          "source_id": 39,
+          "record": ".msappproxy.net",
+          "reason": "企业客户发布任意内部应用的代理租户根，官方示例expenses-contoso.msappproxy.net，非Microsoft自有内容。"
+        },
+        {
+          "source_id": 39,
+          "record": ".msecnd.net",
+          "reason": "Azure网站、CDN、虚机、容器、移动应用或流量管理的多租户根，非Microsoft自有网站专属。"
+        },
+        {
+          "source_id": 39,
+          "record": ".omniroot.com",
+          "reason": "Public certificate authority serves unrelated applications; do not inherit a consumer service selector for the entire CA namespace. Normal fallback remains available."
+        },
+        {
+          "source_id": 39,
+          "record": ".optimizely.com",
+          "reason": "跨客户实验/脚本平台，不能全站DIRECT归微软。"
+        },
+        {
+          "source_id": 39,
+          "record": ".public-trust.com",
+          "reason": "Public certificate authority serves unrelated applications; do not inherit a consumer service selector for the entire CA namespace. Normal fallback remains available."
+        },
+        {
+          "source_id": 39,
+          "record": ".signalr.net",
+          "reason": "Azure客户IoT、实时通信、工作区租户根，应由具体应用规则或通用出口处理。"
+        },
+        {
+          "source_id": 39,
+          "record": ".tenor.com",
+          "reason": "跨服务品牌边界：不是微软自有业务专属，Google分类若已有前置覆盖仍应清除这里的重复归属；不可据此证明所有子域当前归属。"
+        },
+        {
+          "source_id": 39,
+          "record": ".trafficmanager.cn",
+          "reason": "Azure中国区客户工作负载/路由根，不能仅因云提供商是Microsoft而全局DIRECT；精确控制台和身份端点另留。"
+        },
+        {
+          "source_id": 39,
+          "record": ".trafficmanager.net",
+          "reason": "Azure网站、CDN、虚机、容器、移动应用或流量管理的多租户根，非Microsoft自有网站专属。"
+        },
+        {
+          "source_id": 39,
+          "record": ".uservoice.com",
+          "reason": "跨客户分析/应用分发或反馈平台，没有Microsoft单一租户限定；应回归通用出口。"
+        },
+        {
+          "source_id": 39,
+          "record": ".windows.net",
+          "reason": "父域包含客户自定义资源名/数据平面（存储、数据库、计算、密钥库等）；不得用Microsoft默认DIRECT接管全部。需回添精确控制台/身份入口。"
+        }
+      ]
+    },
+    {
+      "file": "BiliBili.list",
+      "sha256": "337ff8c281fdea8a2832618b16ebe897a58f8c67749348574c4f16b20c4b4739",
+      "bytes": 3265,
+      "records": 115,
+      "source_ids": [
+        40
+      ],
+      "input_types": {
+        "DOMAIN": 53,
+        "DOMAIN-SUFFIX": 62,
+        "IP-CIDR": 8,
+        "USER-AGENT": 4
+      },
+      "removed_non_domain_types": {
+        "IP-CIDR": 8,
+        "USER-AGENT": 4
+      },
+      "removed_domains": []
+    },
+    {
+      "file": "ChinaApps.list",
+      "sha256": "ba0d5327557a75357df540b0605e671fef5cd63c9f4312fff34ea7ef9e3152ad",
+      "bytes": 6877,
+      "records": 390,
+      "source_ids": [
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47
+      ],
+      "input_types": {
+        "DOMAIN": 3,
+        "DOMAIN-KEYWORD": 1,
+        "DOMAIN-SUFFIX": 387,
+        "IP-CIDR": 23,
+        "USER-AGENT": 2
+      },
+      "removed_non_domain_types": {
+        "DOMAIN-KEYWORD": 1,
+        "IP-CIDR": 23,
+        "USER-AGENT": 2
+      },
+      "removed_domains": []
+    },
+    {
+      "file": "LAN.list",
+      "sha256": "49a047e5cc2b385816c93b6792501ad7cf6d5890665efb80d5ba9f753d7efa2f",
+      "bytes": 3011,
+      "records": 124,
+      "source_ids": [
+        48
+      ],
+      "input_types": {
+        "DOMAIN": 9,
+        "DOMAIN-SUFFIX": 115,
+        "IP-CIDR": 18
+      },
+      "removed_non_domain_types": {
+        "IP-CIDR": 18
+      },
+      "removed_domains": []
+    },
+    {
+      "file": "China.list",
+      "sha256": "c66ee2531f6260a6795a019f3d7adb4e854398a26e3fa8130eb782e35c3a0997",
+      "bytes": 51446,
+      "records": 3687,
+      "source_ids": [
+        49,
+        50
+      ],
+      "input_types": {
+        "DOMAIN": 17,
+        "DOMAIN-KEYWORD": 9,
+        "DOMAIN-SUFFIX": 3674,
+        "IP-CIDR": 21,
+        "USER-AGENT": 31
+      },
+      "removed_non_domain_types": {
+        "DOMAIN-KEYWORD": 9,
+        "IP-CIDR": 21,
+        "USER-AGENT": 31
+      },
+      "removed_domains": [
+        {
+          "source_id": 49,
+          "record": ".akadns.net",
+          "reason": "Akamai GTM is shared across customers; removing it from Apple must not allow Microsoft/China to recapture it as DIRECT."
+        },
+        {
+          "source_id": 49,
+          "record": ".msecnd.net",
+          "reason": "Do not reclassify a shared global cloud/CDN namespace as China after removing it from Microsoft. Explicit provider tenants and controls remain earlier."
+        },
+        {
+          "source_id": 49,
+          "record": ".windows.net",
+          "reason": "Do not reclassify a shared global cloud/CDN namespace as China after removing it from Microsoft. Explicit provider tenants and controls remain earlier."
+        },
+        {
+          "source_id": 50,
+          "record": ".ms",
+          "reason": "A whole country-code TLD is not a China or Microsoft identifier; specific Microsoft domains remain explicit."
+        }
+      ]
+    },
+    {
+      "file": "Global.list",
+      "sha256": "13677b2e4254844428709583b208044c5adc7de490f6dd04773ce3138c5a54e9",
+      "bytes": 553264,
+      "records": 35122,
+      "source_ids": [
+        51
+      ],
+      "input_types": {
+        "DOMAIN": 129,
+        "DOMAIN-SUFFIX": 34993
+      },
+      "removed_non_domain_types": {},
+      "removed_domains": []
+    }
+  ],
+  "filtering": "Keep exact/suffix domains; remove IP/ASN/keyword/UA/URL/wildcard rules and reviewed shared roots. DOMAIN-SET leading dot includes the apex and subdomains."
+}

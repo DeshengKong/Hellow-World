@@ -1,0 +1,37 @@
+# We Neuro TikTok DOMAIN-SET - v31
+# Derived from blackmatrix7/ios_rule_script; author: blackmatrix7.
+# License: upstream GNU GPL v2; see LICENSE beside this file.
+# Modified 2026-11-27: deterministic domain-only extraction and shared-root exclusions.
+# Source bytes and changes are recorded in sources.lock.json and manifest.json.
+# SOURCE: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/0b6897dc17e0c513d25449c935a9694818e32f0c/rule/Shadowrocket/TikTok/TikTok.list
+.bytedapm.com
+.bytegecko-i18n.com
+.byteintlapi.com
+.byteoversea.com
+.capcut.com
+.capcutapi.com
+.capcutapi.us
+.capcutstatic.com
+.ibytedtos.com
+.ibyteimg.com
+.ipstatp.com
+.isnssdk.com
+.marscode.com
+.muscdn.com
+.musical.ly
+.sgpstatp.com
+.tik-tokapi.com
+.tiktok.com
+.tiktokcdn-us.com
+.tiktokcdn.com
+.tiktokd.net
+.tiktokd.org
+.tiktokmusic.app
+.tiktokv.com
+.tiktokv.us
+.trae.ai
+.ttwebview.com
+lf16-effectcdn.byteeffecttos-g.com
+lf16-pkgcdn.pitaya-clientai.com
+p16-tiktokcdn-com.akamaized.net
+trae-api-sg.mchost.guru

@@ -1,0 +1,837 @@
+{
+  "schema": 1,
+  "reviewed": "2026-11-27",
+  "action": "Remove classification only, never block requests. Exclusions are scoped to the upstream file; dedicated tenant entries remain.",
+  "exclusions": [
+    {
+      "source_id": 21,
+      "record": ".cookielaw.org",
+      "reason": "通用同意管理/CDN平台，不具Netflix租户限定；Netflix条目会抢占其他网站的同意管理请求。",
+      "confidence": "high",
+      "sources": [
+        "https://docs.onetrust.com/en/consent--preferences/cookie-consent/managing-cookie-scripts-cookie-blocking-and-technical-implementation/configuring-a-content-security-policy-with-onetrust-cdn"
+      ]
+    },
+    {
+      "source_id": 21,
+      "record": ".onetrust.com",
+      "reason": "通用同意管理/CDN平台，不具Netflix租户限定；Netflix条目会抢占其他网站的同意管理请求。",
+      "confidence": "high",
+      "sources": [
+        "https://docs.onetrust.com/en/consent--preferences/cookie-consent/managing-cookie-scripts-cookie-blocking-and-technical-implementation/configuring-a-content-security-policy-with-onetrust-cdn"
+      ]
+    },
+    {
+      "source_id": 21,
+      "record": ".us-west-2.amazonaws.com",
+      "reason": "AWS整个Oregon区域根；不是Netflix专属服务标识，任意客户该区域端点会被Netflix接管。",
+      "confidence": "high",
+      "sources": [
+        "https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-call-api.html"
+      ]
+    },
+    {
+      "source_id": 22,
+      "record": ".adobedtm.com",
+      "reason": "Adobe Tags公共脚本CDN，客户通过路径/配置ID区分；不能整根归Disney。",
+      "confidence": "high",
+      "sources": [
+        "https://experienceleague.adobe.com/en/docs/experience-platform/tags/publish/hosts/managed-by-adobe-host"
+      ]
+    },
+    {
+      "source_id": 22,
+      "record": ".bam.nr-data.net",
+      "reason": "New Relic跨客户浏览器采集/脚本端点，域名不含Disney租户。",
+      "confidence": "high",
+      "sources": [
+        "https://docs.newrelic.com/docs/browser/new-relic-browser/getting-started/compatibility-requirements-browser-monitoring/"
+      ]
+    },
+    {
+      "source_id": 22,
+      "record": ".js-agent.newrelic.com",
+      "reason": "New Relic跨客户浏览器采集/脚本端点，域名不含Disney租户。",
+      "confidence": "high",
+      "sources": [
+        "https://docs.newrelic.com/docs/browser/new-relic-browser/getting-started/compatibility-requirements-browser-monitoring/"
+      ]
+    },
+    {
+      "source_id": 22,
+      "record": ".braze.com",
+      "reason": "Braze SDK区域共享端点，客户通过API key区分，不是Disney专属域。",
+      "confidence": "high",
+      "sources": [
+        "https://braze.com/docs/developer_guide/sdk_integration?sdktab=web"
+      ]
+    },
+    {
+      "source_id": 22,
+      "record": ".cdn.optimizely.com",
+      "reason": "Optimizely跨客户脚本CDN，项目ID位于URL路径，不能按该主机整站归Disney。",
+      "confidence": "high",
+      "sources": [
+        "https://support.optimizely.com/hc/en-us/articles/39078296703373-Check-that-the-snippet-is-implemented"
+      ]
+    },
+    {
+      "source_id": 22,
+      "record": ".conviva.com",
+      "reason": "未限定Disney租户的第三方分析/广告服务；专用业务策略不应占有整个平台或公共采集端点。",
+      "confidence": "high-structural",
+      "sources": []
+    },
+    {
+      "source_id": 22,
+      "record": ".d9.flashtalking.com",
+      "reason": "未限定Disney租户的第三方分析/广告服务；专用业务策略不应占有整个平台或公共采集端点。",
+      "confidence": "high-structural",
+      "sources": []
+    },
+    {
+      "source_id": 22,
+      "record": ".execute-api.us-east-1.amazonaws.com",
+      "reason": "AWS整个区域的API Gateway根，缺少API-ID租户标签；会抢走无关客户API。",
+      "confidence": "high",
+      "sources": [
+        "https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-call-api.html"
+      ]
+    },
+    {
+      "source_id": 23,
+      "record": ".execute-api.ap-southeast-1.amazonaws.com",
+      "reason": "AWS区域API Gateway共享父域，未限定某个API-ID。",
+      "confidence": "high",
+      "sources": [
+        "https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-call-api.html"
+      ]
+    },
+    {
+      "source_id": 23,
+      "record": ".execute-api.us-east-1.amazonaws.com",
+      "reason": "AWS区域API Gateway共享父域，未限定某个API-ID。",
+      "confidence": "high",
+      "sources": [
+        "https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-call-api.html"
+      ]
+    },
+    {
+      "source_id": 23,
+      "record": ".cf-images.ap-southeast-1.prod.boltdns.net",
+      "reason": "Brightcove公共图片/清单/播放器主机，租户通常在请求路径或参数区分，不能将所有客户归HBO/Max。",
+      "confidence": "high",
+      "sources": [
+        "https://studio.support.brightcove.com/general/architecture/domains-and-ports-must-be-accessible-video-cloud.html"
+      ]
+    },
+    {
+      "source_id": 23,
+      "record": ".manifest.prod.boltdns.net",
+      "reason": "Brightcove公共图片/清单/播放器主机，租户通常在请求路径或参数区分，不能将所有客户归HBO/Max。",
+      "confidence": "high",
+      "sources": [
+        "https://studio.support.brightcove.com/general/architecture/domains-and-ports-must-be-accessible-video-cloud.html"
+      ]
+    },
+    {
+      "source_id": 23,
+      "record": ".players.brightcove.net",
+      "reason": "Brightcove公共图片/清单/播放器主机，租户通常在请求路径或参数区分，不能将所有客户归HBO/Max。",
+      "confidence": "high",
+      "sources": [
+        "https://studio.support.brightcove.com/general/architecture/domains-and-ports-must-be-accessible-video-cloud.html"
+      ]
+    },
+    {
+      "source_id": 23,
+      "record": ".youboranqs01.com",
+      "reason": "没有HBO租户限制的第三方测量域；应归通用代理，只有可确认专用租户才回添到HBO。",
+      "confidence": "high-structural",
+      "sources": []
+    },
+    {
+      "source_id": 29,
+      "record": ".amazonaws.com",
+      "reason": "云平台多租户托管根，包含任意客户的API、对象、CDN或应用；Amazon电商业务组不应接管整个平台。",
+      "confidence": "high",
+      "sources": [
+        "https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-call-api.html",
+        "https://repost.aws/knowledge-center/api-gateway-cloudfront-distribution"
+      ]
+    },
+    {
+      "source_id": 29,
+      "record": ".amazonaws.com.cn",
+      "reason": "云平台多租户托管根，包含任意客户的API、对象、CDN或应用；Amazon电商业务组不应接管整个平台。",
+      "confidence": "high",
+      "sources": [
+        "https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-call-api.html",
+        "https://repost.aws/knowledge-center/api-gateway-cloudfront-distribution"
+      ]
+    },
+    {
+      "source_id": 29,
+      "record": ".cloudfront.net",
+      "reason": "云平台多租户托管根，包含任意客户的API、对象、CDN或应用；Amazon电商业务组不应接管整个平台。",
+      "confidence": "high",
+      "sources": [
+        "https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-call-api.html",
+        "https://repost.aws/knowledge-center/api-gateway-cloudfront-distribution"
+      ]
+    },
+    {
+      "source_id": 29,
+      "record": ".elasticbeanstalk.com",
+      "reason": "云平台多租户托管根，包含任意客户的API、对象、CDN或应用；Amazon电商业务组不应接管整个平台。",
+      "confidence": "high",
+      "sources": [
+        "https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-call-api.html",
+        "https://repost.aws/knowledge-center/api-gateway-cloudfront-distribution"
+      ]
+    },
+    {
+      "source_id": 29,
+      "record": ".amplifyapp.com",
+      "reason": "云平台多租户托管根，包含任意客户的API、对象、CDN或应用；Amazon电商业务组不应接管整个平台。",
+      "confidence": "high",
+      "sources": [
+        "https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-call-api.html",
+        "https://repost.aws/knowledge-center/api-gateway-cloudfront-distribution"
+      ]
+    },
+    {
+      "source_id": 29,
+      "record": ".llnwd.net",
+      "reason": "跨客户视频CDN父域，Brightcove等非Amazon服务也使用；不是Amazon专用。",
+      "confidence": "high",
+      "sources": [
+        "https://studio.support.brightcove.com/general/architecture/domains-and-ports-must-be-accessible-video-cloud.html"
+      ]
+    },
+    {
+      "source_id": 33,
+      "record": ".helpshift.com",
+      "reason": "跨客户客服平台，租户为品牌子域，不能整根归Epic。",
+      "confidence": "high",
+      "sources": [
+        "https://developers.helpshift.com/web-chat/getting-started/"
+      ]
+    },
+    {
+      "source_id": 36,
+      "record": ".helpshift.com",
+      "reason": "跨客户客服平台，不能将非游戏客户请求一起归游戏平台。",
+      "confidence": "high",
+      "sources": [
+        "https://developers.helpshift.com/web-chat/getting-started/"
+      ]
+    },
+    {
+      "source_id": 39,
+      "record": ".windows.net",
+      "reason": "父域包含客户自定义资源名/数据平面（存储、数据库、计算、密钥库等）；不得用Microsoft默认DIRECT接管全部。需回添精确控制台/身份入口。",
+      "confidence": "high",
+      "sources": [
+        "https://learn.microsoft.com/azure/security/fundamentals/azure-domains",
+        "https://learn.microsoft.com/en-us/azure/china/concepts-service-availability"
+      ]
+    },
+    {
+      "source_id": 39,
+      "record": ".azure.com",
+      "reason": "父域包含客户自定义资源名/数据平面（存储、数据库、计算、密钥库等）；不得用Microsoft默认DIRECT接管全部。需回添精确控制台/身份入口。",
+      "confidence": "high",
+      "sources": [
+        "https://learn.microsoft.com/azure/security/fundamentals/azure-domains",
+        "https://learn.microsoft.com/en-us/azure/china/concepts-service-availability"
+      ]
+    },
+    {
+      "source_id": 39,
+      "record": ".azure.net",
+      "reason": "父域包含客户自定义资源名/数据平面（存储、数据库、计算、密钥库等）；不得用Microsoft默认DIRECT接管全部。需回添精确控制台/身份入口。",
+      "confidence": "high",
+      "sources": [
+        "https://learn.microsoft.com/azure/security/fundamentals/azure-domains",
+        "https://learn.microsoft.com/en-us/azure/china/concepts-service-availability"
+      ]
+    },
+    {
+      "source_id": 39,
+      "record": ".azure.cn",
+      "reason": "父域包含客户自定义资源名/数据平面（存储、数据库、计算、密钥库等）；不得用Microsoft默认DIRECT接管全部。需回添精确控制台/身份入口。",
+      "confidence": "high",
+      "sources": [
+        "https://learn.microsoft.com/azure/security/fundamentals/azure-domains",
+        "https://learn.microsoft.com/en-us/azure/china/concepts-service-availability"
+      ]
+    },
+    {
+      "source_id": 39,
+      "record": ".azurewebsites.net",
+      "reason": "Azure网站、CDN、虚机、容器、移动应用或流量管理的多租户根，非Microsoft自有网站专属。",
+      "confidence": "high",
+      "sources": [
+        "https://learn.microsoft.com/azure/security/fundamentals/azure-domains"
+      ]
+    },
+    {
+      "source_id": 39,
+      "record": ".azureedge.net",
+      "reason": "Azure网站、CDN、虚机、容器、移动应用或流量管理的多租户根，非Microsoft自有网站专属。",
+      "confidence": "high",
+      "sources": [
+        "https://learn.microsoft.com/azure/security/fundamentals/azure-domains"
+      ]
+    },
+    {
+      "source_id": 39,
+      "record": ".azurefd.net",
+      "reason": "Azure网站、CDN、虚机、容器、移动应用或流量管理的多租户根，非Microsoft自有网站专属。",
+      "confidence": "high",
+      "sources": [
+        "https://learn.microsoft.com/azure/security/fundamentals/azure-domains"
+      ]
+    },
+    {
+      "source_id": 39,
+      "record": ".cloudapp.net",
+      "reason": "Azure网站、CDN、虚机、容器、移动应用或流量管理的多租户根，非Microsoft自有网站专属。",
+      "confidence": "high",
+      "sources": [
+        "https://learn.microsoft.com/azure/security/fundamentals/azure-domains"
+      ]
+    },
+    {
+      "source_id": 39,
+      "record": ".azurecontainer.io",
+      "reason": "Azure网站、CDN、虚机、容器、移动应用或流量管理的多租户根，非Microsoft自有网站专属。",
+      "confidence": "high",
+      "sources": [
+        "https://learn.microsoft.com/azure/security/fundamentals/azure-domains"
+      ]
+    },
+    {
+      "source_id": 39,
+      "record": ".azure-mobile.net",
+      "reason": "Azure网站、CDN、虚机、容器、移动应用或流量管理的多租户根，非Microsoft自有网站专属。",
+      "confidence": "high",
+      "sources": [
+        "https://learn.microsoft.com/azure/security/fundamentals/azure-domains"
+      ]
+    },
+    {
+      "source_id": 39,
+      "record": ".trafficmanager.net",
+      "reason": "Azure网站、CDN、虚机、容器、移动应用或流量管理的多租户根，非Microsoft自有网站专属。",
+      "confidence": "high",
+      "sources": [
+        "https://learn.microsoft.com/azure/security/fundamentals/azure-domains"
+      ]
+    },
+    {
+      "source_id": 39,
+      "record": ".msecnd.net",
+      "reason": "Azure网站、CDN、虚机、容器、移动应用或流量管理的多租户根，非Microsoft自有网站专属。",
+      "confidence": "high",
+      "sources": [
+        "https://learn.microsoft.com/azure/security/fundamentals/azure-domains"
+      ]
+    },
+    {
+      "source_id": 39,
+      "record": ".chinacloudapi.cn",
+      "reason": "Azure中国区客户工作负载/路由根，不能仅因云提供商是Microsoft而全局DIRECT；精确控制台和身份端点另留。",
+      "confidence": "high",
+      "sources": [
+        "https://learn.microsoft.com/en-us/azure/china/concepts-service-availability",
+        "https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-dns"
+      ]
+    },
+    {
+      "source_id": 39,
+      "record": ".chinacloudapp.cn",
+      "reason": "Azure中国区客户工作负载/路由根，不能仅因云提供商是Microsoft而全局DIRECT；精确控制台和身份端点另留。",
+      "confidence": "high",
+      "sources": [
+        "https://learn.microsoft.com/en-us/azure/china/concepts-service-availability",
+        "https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-dns"
+      ]
+    },
+    {
+      "source_id": 39,
+      "record": ".chinacloudsites.cn",
+      "reason": "Azure中国区客户工作负载/路由根，不能仅因云提供商是Microsoft而全局DIRECT；精确控制台和身份端点另留。",
+      "confidence": "high",
+      "sources": [
+        "https://learn.microsoft.com/en-us/azure/china/concepts-service-availability",
+        "https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-dns"
+      ]
+    },
+    {
+      "source_id": 39,
+      "record": ".chinacloud-mobile.cn",
+      "reason": "Azure中国区客户工作负载/路由根，不能仅因云提供商是Microsoft而全局DIRECT；精确控制台和身份端点另留。",
+      "confidence": "high",
+      "sources": [
+        "https://learn.microsoft.com/en-us/azure/china/concepts-service-availability",
+        "https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-dns"
+      ]
+    },
+    {
+      "source_id": 39,
+      "record": ".azurehdinsight.cn",
+      "reason": "Azure中国区客户工作负载/路由根，不能仅因云提供商是Microsoft而全局DIRECT；精确控制台和身份端点另留。",
+      "confidence": "high",
+      "sources": [
+        "https://learn.microsoft.com/en-us/azure/china/concepts-service-availability",
+        "https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-dns"
+      ]
+    },
+    {
+      "source_id": 39,
+      "record": ".trafficmanager.cn",
+      "reason": "Azure中国区客户工作负载/路由根，不能仅因云提供商是Microsoft而全局DIRECT；精确控制台和身份端点另留。",
+      "confidence": "high",
+      "sources": [
+        "https://learn.microsoft.com/en-us/azure/china/concepts-service-availability",
+        "https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-dns"
+      ]
+    },
+    {
+      "source_id": 39,
+      "record": ".azure-devices.net",
+      "reason": "Azure客户IoT、实时通信、工作区租户根，应由具体应用规则或通用出口处理。",
+      "confidence": "high",
+      "sources": [
+        "https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-dns"
+      ]
+    },
+    {
+      "source_id": 39,
+      "record": ".azureiotcentral.com",
+      "reason": "Azure客户IoT、实时通信、工作区租户根，应由具体应用规则或通用出口处理。",
+      "confidence": "high",
+      "sources": [
+        "https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-dns"
+      ]
+    },
+    {
+      "source_id": 39,
+      "record": ".signalr.net",
+      "reason": "Azure客户IoT、实时通信、工作区租户根，应由具体应用规则或通用出口处理。",
+      "confidence": "high",
+      "sources": [
+        "https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-dns"
+      ]
+    },
+    {
+      "source_id": 39,
+      "record": ".azuredatabricks.net",
+      "reason": "Azure客户IoT、实时通信、工作区租户根，应由具体应用规则或通用出口处理。",
+      "confidence": "high",
+      "sources": [
+        "https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-dns"
+      ]
+    },
+    {
+      "source_id": 39,
+      "record": ".azure-apim.net",
+      "reason": "跨客户连接器/API运行时根，不能整体认为是Office自有网页；租户/连接器也可能访问第三方API。",
+      "confidence": "high",
+      "sources": [
+        "https://learn.microsoft.com/en-us/power-automate/ip-address-configuration"
+      ]
+    },
+    {
+      "source_id": 39,
+      "record": ".msappproxy.net",
+      "reason": "企业客户发布任意内部应用的代理租户根，官方示例expenses-contoso.msappproxy.net，非Microsoft自有内容。",
+      "confidence": "high",
+      "sources": [
+        "https://learn.microsoft.com/en-us/entra/identity/app-proxy/how-to-configure-custom-domain"
+      ]
+    },
+    {
+      "source_id": 39,
+      "record": ".b.akamaiedge.net",
+      "reason": "Akamai多客户CDN命名空间父域；保留已限定租户/精确主机的微软条目，不保留公共父域。",
+      "confidence": "high-structural",
+      "sources": []
+    },
+    {
+      "source_id": 39,
+      "record": ".g.akamaiedge.net",
+      "reason": "Akamai多客户CDN命名空间父域；保留已限定租户/精确主机的微软条目，不保留公共父域。",
+      "confidence": "high-structural",
+      "sources": []
+    },
+    {
+      "source_id": 39,
+      "record": ".edgesuite.net",
+      "reason": "Akamai多客户CDN命名空间父域；保留已限定租户/精确主机的微软条目，不保留公共父域。",
+      "confidence": "high-structural",
+      "sources": []
+    },
+    {
+      "source_id": 39,
+      "record": ".helpshift.com",
+      "reason": "跨客户客服平台，不是Microsoft专用。",
+      "confidence": "high",
+      "sources": [
+        "https://developers.helpshift.com/web-chat/getting-started/"
+      ]
+    },
+    {
+      "source_id": 39,
+      "record": ".optimizely.com",
+      "reason": "跨客户实验/脚本平台，不能全站DIRECT归微软。",
+      "confidence": "high",
+      "sources": [
+        "https://support.optimizely.com/hc/en-us/articles/39078296703373-Check-that-the-snippet-is-implemented"
+      ]
+    },
+    {
+      "source_id": 39,
+      "record": ".localytics.com",
+      "reason": "跨客户分析/应用分发或反馈平台，没有Microsoft单一租户限定；应回归通用出口。",
+      "confidence": "high-structural",
+      "sources": []
+    },
+    {
+      "source_id": 39,
+      "record": ".hockeyapp.net",
+      "reason": "跨客户分析/应用分发或反馈平台，没有Microsoft单一租户限定；应回归通用出口。",
+      "confidence": "high-structural",
+      "sources": []
+    },
+    {
+      "source_id": 39,
+      "record": ".uservoice.com",
+      "reason": "跨客户分析/应用分发或反馈平台，没有Microsoft单一租户限定；应回归通用出口。",
+      "confidence": "high-structural",
+      "sources": []
+    },
+    {
+      "source_id": 39,
+      "record": ".fabric.io",
+      "reason": "跨服务品牌边界：不是微软自有业务专属，Google分类若已有前置覆盖仍应清除这里的重复归属；不可据此证明所有子域当前归属。",
+      "confidence": "high-structural",
+      "sources": []
+    },
+    {
+      "source_id": 39,
+      "record": ".tenor.com",
+      "reason": "跨服务品牌边界：不是微软自有业务专属，Google分类若已有前置覆盖仍应清除这里的重复归属；不可据此证明所有子域当前归属。",
+      "confidence": "high-structural",
+      "sources": []
+    },
+    {
+      "source_id": 28,
+      "record": ".ip6.static.sl-reverse.com",
+      "reason": "基础设施反向命名空间父域没有Facebook租户限定；不应把其他云客户IPv6反向主机归Facebook。",
+      "confidence": "high-structural",
+      "sources": []
+    },
+    {
+      "source_id": 39,
+      "record": ".azure-api.cn",
+      "reason": "属于Azure客户运行时/多租户服务域家族，未在本轮第一方资料逐项确认此确切后缀；保守方案不赋予DIRECT，使用通用出口；如需保留，先提供专用tenant或第一方端点证据。",
+      "confidence": "family-inference",
+      "sources": [
+        "https://learn.microsoft.com/azure/security/fundamentals/azure-domains",
+        "https://learn.microsoft.com/en-us/azure/china/concepts-service-availability",
+        "https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-dns"
+      ]
+    },
+    {
+      "source_id": 39,
+      "record": ".azure-apihub.cn",
+      "reason": "属于Azure客户运行时/多租户服务域家族，未在本轮第一方资料逐项确认此确切后缀；保守方案不赋予DIRECT，使用通用出口；如需保留，先提供专用tenant或第一方端点证据。",
+      "confidence": "family-inference",
+      "sources": [
+        "https://learn.microsoft.com/azure/security/fundamentals/azure-domains",
+        "https://learn.microsoft.com/en-us/azure/china/concepts-service-availability",
+        "https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-dns"
+      ]
+    },
+    {
+      "source_id": 39,
+      "record": ".azure-automation.cn",
+      "reason": "属于Azure客户运行时/多租户服务域家族，未在本轮第一方资料逐项确认此确切后缀；保守方案不赋予DIRECT，使用通用出口；如需保留，先提供专用tenant或第一方端点证据。",
+      "confidence": "family-inference",
+      "sources": [
+        "https://learn.microsoft.com/azure/security/fundamentals/azure-domains",
+        "https://learn.microsoft.com/en-us/azure/china/concepts-service-availability",
+        "https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-dns"
+      ]
+    },
+    {
+      "source_id": 39,
+      "record": ".azure-devices.cn",
+      "reason": "属于Azure客户运行时/多租户服务域家族，未在本轮第一方资料逐项确认此确切后缀；保守方案不赋予DIRECT，使用通用出口；如需保留，先提供专用tenant或第一方端点证据。",
+      "confidence": "family-inference",
+      "sources": [
+        "https://learn.microsoft.com/azure/security/fundamentals/azure-domains",
+        "https://learn.microsoft.com/en-us/azure/china/concepts-service-availability",
+        "https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-dns"
+      ]
+    },
+    {
+      "source_id": 39,
+      "record": ".azure-devices-provisioning.cn",
+      "reason": "属于Azure客户运行时/多租户服务域家族，未在本轮第一方资料逐项确认此确切后缀；保守方案不赋予DIRECT，使用通用出口；如需保留，先提供专用tenant或第一方端点证据。",
+      "confidence": "family-inference",
+      "sources": [
+        "https://learn.microsoft.com/azure/security/fundamentals/azure-domains",
+        "https://learn.microsoft.com/en-us/azure/china/concepts-service-availability",
+        "https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-dns"
+      ]
+    },
+    {
+      "source_id": 39,
+      "record": ".azurecomm.net",
+      "reason": "属于Azure客户运行时/多租户服务域家族，未在本轮第一方资料逐项确认此确切后缀；保守方案不赋予DIRECT，使用通用出口；如需保留，先提供专用tenant或第一方端点证据。",
+      "confidence": "family-inference",
+      "sources": [
+        "https://learn.microsoft.com/azure/security/fundamentals/azure-domains",
+        "https://learn.microsoft.com/en-us/azure/china/concepts-service-availability",
+        "https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-dns"
+      ]
+    },
+    {
+      "source_id": 39,
+      "record": ".azurecosmos.net",
+      "reason": "属于Azure客户运行时/多租户服务域家族，未在本轮第一方资料逐项确认此确切后缀；保守方案不赋予DIRECT，使用通用出口；如需保留，先提供专用tenant或第一方端点证据。",
+      "confidence": "family-inference",
+      "sources": [
+        "https://learn.microsoft.com/azure/security/fundamentals/azure-domains",
+        "https://learn.microsoft.com/en-us/azure/china/concepts-service-availability",
+        "https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-dns"
+      ]
+    },
+    {
+      "source_id": 39,
+      "record": ".azurecosmosdb.com",
+      "reason": "属于Azure客户运行时/多租户服务域家族，未在本轮第一方资料逐项确认此确切后缀；保守方案不赋予DIRECT，使用通用出口；如需保留，先提供专用tenant或第一方端点证据。",
+      "confidence": "family-inference",
+      "sources": [
+        "https://learn.microsoft.com/azure/security/fundamentals/azure-domains",
+        "https://learn.microsoft.com/en-us/azure/china/concepts-service-availability",
+        "https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-dns"
+      ]
+    },
+    {
+      "source_id": 39,
+      "record": ".azurecosmosdb.info",
+      "reason": "属于Azure客户运行时/多租户服务域家族，未在本轮第一方资料逐项确认此确切后缀；保守方案不赋予DIRECT，使用通用出口；如需保留，先提供专用tenant或第一方端点证据。",
+      "confidence": "family-inference",
+      "sources": [
+        "https://learn.microsoft.com/azure/security/fundamentals/azure-domains",
+        "https://learn.microsoft.com/en-us/azure/china/concepts-service-availability",
+        "https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-dns"
+      ]
+    },
+    {
+      "source_id": 39,
+      "record": ".azurecosmosdb.net",
+      "reason": "属于Azure客户运行时/多租户服务域家族，未在本轮第一方资料逐项确认此确切后缀；保守方案不赋予DIRECT，使用通用出口；如需保留，先提供专用tenant或第一方端点证据。",
+      "confidence": "family-inference",
+      "sources": [
+        "https://learn.microsoft.com/azure/security/fundamentals/azure-domains",
+        "https://learn.microsoft.com/en-us/azure/china/concepts-service-availability",
+        "https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-dns"
+      ]
+    },
+    {
+      "source_id": 39,
+      "record": ".azurecr.cn",
+      "reason": "属于Azure客户运行时/多租户服务域家族，未在本轮第一方资料逐项确认此确切后缀；保守方案不赋予DIRECT，使用通用出口；如需保留，先提供专用tenant或第一方端点证据。",
+      "confidence": "family-inference",
+      "sources": [
+        "https://learn.microsoft.com/azure/security/fundamentals/azure-domains",
+        "https://learn.microsoft.com/en-us/azure/china/concepts-service-availability",
+        "https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-dns"
+      ]
+    },
+    {
+      "source_id": 39,
+      "record": ".azuredigitaltwins.net",
+      "reason": "属于Azure客户运行时/多租户服务域家族，未在本轮第一方资料逐项确认此确切后缀；保守方案不赋予DIRECT，使用通用出口；如需保留，先提供专用tenant或第一方端点证据。",
+      "confidence": "family-inference",
+      "sources": [
+        "https://learn.microsoft.com/azure/security/fundamentals/azure-domains",
+        "https://learn.microsoft.com/en-us/azure/china/concepts-service-availability",
+        "https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-dns"
+      ]
+    },
+    {
+      "source_id": 39,
+      "record": ".azurefd.us",
+      "reason": "属于Azure客户运行时/多租户服务域家族，未在本轮第一方资料逐项确认此确切后缀；保守方案不赋予DIRECT，使用通用出口；如需保留，先提供专用tenant或第一方端点证据。",
+      "confidence": "family-inference",
+      "sources": [
+        "https://learn.microsoft.com/azure/security/fundamentals/azure-domains",
+        "https://learn.microsoft.com/en-us/azure/china/concepts-service-availability",
+        "https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-dns"
+      ]
+    },
+    {
+      "source_id": 39,
+      "record": ".azureserviceprofiler.com",
+      "reason": "属于Azure客户运行时/多租户服务域家族，未在本轮第一方资料逐项确认此确切后缀；保守方案不赋予DIRECT，使用通用出口；如需保留，先提供专用tenant或第一方端点证据。",
+      "confidence": "family-inference",
+      "sources": [
+        "https://learn.microsoft.com/azure/security/fundamentals/azure-domains",
+        "https://learn.microsoft.com/en-us/azure/china/concepts-service-availability",
+        "https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-dns"
+      ]
+    },
+    {
+      "source_id": 39,
+      "record": ".azuresmartspaces.net",
+      "reason": "属于Azure客户运行时/多租户服务域家族，未在本轮第一方资料逐项确认此确切后缀；保守方案不赋予DIRECT，使用通用出口；如需保留，先提供专用tenant或第一方端点证据。",
+      "confidence": "family-inference",
+      "sources": [
+        "https://learn.microsoft.com/azure/security/fundamentals/azure-domains",
+        "https://learn.microsoft.com/en-us/azure/china/concepts-service-availability",
+        "https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-dns"
+      ]
+    },
+    {
+      "source_id": 39,
+      "record": ".cosmosdb.info",
+      "reason": "属于Azure客户运行时/多租户服务域家族，未在本轮第一方资料逐项确认此确切后缀；保守方案不赋予DIRECT，使用通用出口；如需保留，先提供专用tenant或第一方端点证据。",
+      "confidence": "family-inference",
+      "sources": [
+        "https://learn.microsoft.com/azure/security/fundamentals/azure-domains",
+        "https://learn.microsoft.com/en-us/azure/china/concepts-service-availability",
+        "https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-dns"
+      ]
+    },
+    {
+      "source_id": 39,
+      "record": ".cosmosdb.net",
+      "reason": "属于Azure客户运行时/多租户服务域家族，未在本轮第一方资料逐项确认此确切后缀；保守方案不赋予DIRECT，使用通用出口；如需保留，先提供专用tenant或第一方端点证据。",
+      "confidence": "family-inference",
+      "sources": [
+        "https://learn.microsoft.com/azure/security/fundamentals/azure-domains",
+        "https://learn.microsoft.com/en-us/azure/china/concepts-service-availability",
+        "https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-dns"
+      ]
+    },
+    {
+      "source_id": 39,
+      "record": ".msappproxy.cn",
+      "reason": "属于Azure客户运行时/多租户服务域家族，未在本轮第一方资料逐项确认此确切后缀；保守方案不赋予DIRECT，使用通用出口；如需保留，先提供专用tenant或第一方端点证据。",
+      "confidence": "family-inference",
+      "sources": [
+        "https://learn.microsoft.com/azure/security/fundamentals/azure-domains",
+        "https://learn.microsoft.com/en-us/azure/china/concepts-service-availability",
+        "https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-dns"
+      ]
+    },
+    {
+      "source_id": 50,
+      "record": ".ms",
+      "reason": "A whole country-code TLD is not a China or Microsoft identifier; specific Microsoft domains remain explicit.",
+      "confidence": "high",
+      "sources": [
+        "https://www.iana.org/domains/root/db/ms.html"
+      ]
+    },
+    {
+      "source_id": 49,
+      "record": ".windows.net",
+      "reason": "Do not reclassify a shared global cloud/CDN namespace as China after removing it from Microsoft. Explicit provider tenants and controls remain earlier.",
+      "confidence": "high",
+      "sources": [
+        "https://learn.microsoft.com/azure/security/fundamentals/azure-domains"
+      ]
+    },
+    {
+      "source_id": 49,
+      "record": ".msecnd.net",
+      "reason": "Do not reclassify a shared global cloud/CDN namespace as China after removing it from Microsoft. Explicit provider tenants and controls remain earlier.",
+      "confidence": "high",
+      "sources": [
+        "https://learn.microsoft.com/azure/security/fundamentals/azure-domains"
+      ]
+    },
+    {
+      "source_id": 37,
+      "record": ".akadns.net",
+      "reason": "Akamai GTM customer namespace is shared; it must not inherit Apple DIRECT. Specific Apple CDN tenants remain earlier.",
+      "confidence": "high",
+      "sources": [
+        "https://techdocs.akamai.com/gtm/docs/gtm-concepts"
+      ]
+    },
+    {
+      "source_id": 39,
+      "record": ".akadns.net",
+      "reason": "Akamai GTM is shared across customers; removing it from Apple must not allow Microsoft/China to recapture it as DIRECT.",
+      "confidence": "high",
+      "sources": [
+        "https://techdocs.akamai.com/gtm/docs/traffic-mgmt-domains",
+        "https://www.akamai.com/blog/developers/adding-akamai-shared-domains-to-the-public-suffix-list"
+      ]
+    },
+    {
+      "source_id": 49,
+      "record": ".akadns.net",
+      "reason": "Akamai GTM is shared across customers; removing it from Apple must not allow Microsoft/China to recapture it as DIRECT.",
+      "confidence": "high",
+      "sources": [
+        "https://techdocs.akamai.com/gtm/docs/traffic-mgmt-domains",
+        "https://www.akamai.com/blog/developers/adding-akamai-shared-domains-to-the-public-suffix-list"
+      ]
+    },
+    {
+      "source_id": 30,
+      "record": ".snssdk.com",
+      "reason": "ByteDance shared domestic SDK namespace includes Douyin login/payment; do not classify the entire root as international TikTok. ChinaApps retains domestic handling, with two verified critical hosts explicit in the main profile.",
+      "confidence": "high",
+      "sources": [
+        "https://open.douyin.com/platform/resource/docs/openapi/account-permission/douyin-default-get-permission-code"
+      ]
+    },
+    {
+      "source_id": 37,
+      "record": ".digicert.com",
+      "reason": "Independent public certificate authority is not Apple-exclusive; retain normal routing rather than classifying the entire CA namespace as Apple.",
+      "confidence": "high",
+      "sources": [
+        "https://knowledge.digicert.com/alerts/digicert-certificate-status-ip-address"
+      ]
+    },
+    {
+      "source_id": 39,
+      "record": ".omniroot.com",
+      "reason": "Public certificate authority serves unrelated applications; do not inherit a consumer service selector for the entire CA namespace. Normal fallback remains available.",
+      "confidence": "high",
+      "sources": [
+        "https://knowledge.digicert.com/alerts/digicert-certificate-status-ip-address"
+      ]
+    },
+    {
+      "source_id": 39,
+      "record": ".public-trust.com",
+      "reason": "Public certificate authority serves unrelated applications; do not inherit a consumer service selector for the entire CA namespace. Normal fallback remains available.",
+      "confidence": "high",
+      "sources": [
+        "https://knowledge.digicert.com/alerts/digicert-certificate-status-ip-address"
+      ]
+    },
+    {
+      "source_id": 29,
+      "record": ".amazontrust.com",
+      "reason": "Public certificate authority serves unrelated applications; do not inherit a consumer service selector for the entire CA namespace. Normal fallback remains available.",
+      "confidence": "high",
+      "sources": [
+        "https://www.amazontrust.com/repository/"
+      ]
+    }
+  ]
+}

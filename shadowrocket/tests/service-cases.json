@@ -1,0 +1,2050 @@
+{
+  "schema": 1,
+  "note": "Synthetic hosts test rule boundaries; no live host existence, ownership or traffic is asserted. Country is a supplied fixture, not a GeoIP lookup.",
+  "tests": [
+    {
+      "id": "service-001",
+      "host": "www.google.com",
+      "expected_rule_policy_any": [
+        "Google"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-002",
+      "host": "accounts.google.com",
+      "expected_rule_policy_any": [
+        "Google"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-003",
+      "host": "mail.google.com",
+      "expected_rule_policy_any": [
+        "Google"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-004",
+      "host": "drive.google.com",
+      "expected_rule_policy_any": [
+        "Google"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-005",
+      "host": "docs.google.com",
+      "expected_rule_policy_any": [
+        "Google"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-006",
+      "host": "gemini.google.com",
+      "expected_rule_policy_any": [
+        "Google"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-007",
+      "host": "gemini.google",
+      "expected_rule_policy_any": [
+        "Google"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-008",
+      "host": "antigravity.google",
+      "expected_rule_policy_any": [
+        "Google"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-009",
+      "host": "antigravity-unleash.goog",
+      "expected_rule_policy_any": [
+        "Google"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-010",
+      "host": "colab.research.google.com",
+      "expected_rule_policy_any": [
+        "Google"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-011",
+      "host": "colab.google",
+      "expected_rule_policy_any": [
+        "Google"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-012",
+      "host": "cloud.google.com",
+      "expected_rule_policy_any": [
+        "Google"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-013",
+      "host": "console.cloud.google.com",
+      "expected_rule_policy_any": [
+        "Google"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-014",
+      "host": "storage.googleapis.com",
+      "expected_rule_policy_any": [
+        "Google"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-015",
+      "host": "oauth2.googleapis.com",
+      "expected_rule_policy_any": [
+        "Google"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-016",
+      "host": "aistudio.google.com",
+      "expected_rule_policy_any": [
+        "Google"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-017",
+      "host": "notebooklm.google",
+      "expected_rule_policy_any": [
+        "Google"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-018",
+      "host": "notebooklm.google.com",
+      "expected_rule_policy_any": [
+        "Google"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-019",
+      "host": "jules.google.com",
+      "expected_rule_policy_any": [
+        "Google"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-020",
+      "host": "deepmind.google",
+      "expected_rule_policy_any": [
+        "Google"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-021",
+      "host": "deepmind.com",
+      "expected_rule_policy_any": [
+        "Google"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-022",
+      "host": "firebaseio.com",
+      "expected_rule_policy_any": [
+        "Google"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-023",
+      "host": "project.firebaseio.com",
+      "expected_rule_policy_any": [
+        "Google"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-024",
+      "host": "project.firebaseapp.com",
+      "expected_rule_policy_any": [
+        "Google"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-025",
+      "host": "project.web.app",
+      "expected_rule_policy_any": [
+        "Google"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-026",
+      "host": "project.appspot.com",
+      "expected_rule_policy_any": [
+        "Google"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-027",
+      "host": "project.run.app",
+      "expected_rule_policy_any": [
+        "Google"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-028",
+      "host": "us-docker.pkg.dev",
+      "expected_rule_policy_any": [
+        "Google"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-029",
+      "host": "gcr.io",
+      "expected_rule_policy_any": [
+        "Google"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-030",
+      "host": "gstatic.cn",
+      "expected_rule_policy_any": [
+        "Google"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-031",
+      "host": "www.google.co.jp",
+      "expected_rule_policy_any": [
+        "Google"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-032",
+      "host": "www.google.com.hk",
+      "expected_rule_policy_any": [
+        "Google"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-033",
+      "host": "www.google.cn",
+      "expected_rule_policy_any": [
+        "Google"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-034",
+      "host": "fonts.gstatic.com",
+      "expected_rule_policy_any": [
+        "Google"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-035",
+      "host": "lh3.googleusercontent.com",
+      "expected_rule_policy_any": [
+        "Google"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-036",
+      "host": "google.dev",
+      "expected_rule_policy_any": [
+        "Google"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-037",
+      "host": "ai.google.dev",
+      "expected_rule_policy_any": [
+        "Google"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-038",
+      "host": "youtube.com",
+      "expected_rule_policy_any": [
+        "YouTube"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-039",
+      "host": "www.youtube.com",
+      "expected_rule_policy_any": [
+        "YouTube"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-040",
+      "host": "music.youtube.com",
+      "expected_rule_policy_any": [
+        "YouTube"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-041",
+      "host": "youtube-nocookie.com",
+      "expected_rule_policy_any": [
+        "YouTube"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-042",
+      "host": "youtu.be",
+      "expected_rule_policy_any": [
+        "YouTube"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-043",
+      "host": "i.ytimg.com",
+      "expected_rule_policy_any": [
+        "YouTube"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-044",
+      "host": "rr1.googlevideo.com",
+      "expected_rule_policy_any": [
+        "YouTube"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-045",
+      "host": "yt3.ggpht.com",
+      "expected_rule_policy_any": [
+        "YouTube"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-046",
+      "host": "youtubei.googleapis.com",
+      "expected_rule_policy_any": [
+        "Google"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-047",
+      "host": "ant.dev",
+      "expected_rule_policy_any": [
+        "Claude"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-048",
+      "host": "anthropic.team",
+      "expected_rule_policy_any": [
+        "Claude"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-049",
+      "host": "antspace.dev",
+      "expected_rule_policy_any": [
+        "Claude"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-050",
+      "host": "chatbotclaude.com",
+      "expected_rule_policy_any": [
+        "Claude"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-051",
+      "host": "claude.new",
+      "expected_rule_policy_any": [
+        "Claude"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-052",
+      "host": "claude.site",
+      "expected_rule_policy_any": [
+        "Claude"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-053",
+      "host": "claudeacademy.com",
+      "expected_rule_policy_any": [
+        "Claude"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-054",
+      "host": "claudepages.dev",
+      "expected_rule_policy_any": [
+        "Claude"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-055",
+      "host": "claudestudio.com",
+      "expected_rule_policy_any": [
+        "Claude"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-056",
+      "host": "anthropic.com",
+      "expected_rule_policy_any": [
+        "Claude"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-057",
+      "host": "claude.ai",
+      "expected_rule_policy_any": [
+        "Claude"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-058",
+      "host": "claude.com",
+      "expected_rule_policy_any": [
+        "Claude"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-059",
+      "host": "claude.app",
+      "expected_rule_policy_any": [
+        "Claude"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-060",
+      "host": "claude.dev",
+      "expected_rule_policy_any": [
+        "Claude"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-061",
+      "host": "clau.de",
+      "expected_rule_policy_any": [
+        "Claude"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-062",
+      "host": "claudeusercontent.com",
+      "expected_rule_policy_any": [
+        "Claude"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-063",
+      "host": "claudemcpclient.com",
+      "expected_rule_policy_any": [
+        "Claude"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-064",
+      "host": "claudemcpcontent.com",
+      "expected_rule_policy_any": [
+        "Claude"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-065",
+      "host": "api.anthropic.com",
+      "expected_rule_policy_any": [
+        "Claude"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-066",
+      "host": "platform.claude.com",
+      "expected_rule_policy_any": [
+        "Claude"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-067",
+      "host": "sso.claude.com",
+      "expected_rule_policy_any": [
+        "Claude"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-068",
+      "host": "downloads.claude.ai",
+      "expected_rule_policy_any": [
+        "Claude"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-069",
+      "host": "mcp-proxy.anthropic.com",
+      "expected_rule_policy_any": [
+        "Claude"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-070",
+      "host": "bridge.claudeusercontent.com",
+      "expected_rule_policy_any": [
+        "Claude"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-071",
+      "host": "id.frame.claudeusercontent.com",
+      "expected_rule_policy_any": [
+        "Claude"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-072",
+      "host": "x.claudemcpcontent.com",
+      "expected_rule_policy_any": [
+        "Claude"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-073",
+      "host": "anthropic.auth0.com",
+      "expected_rule_policy_any": [
+        "Claude"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-074",
+      "host": "anthropic.com.cdn.cloudflare.net",
+      "expected_rule_policy_any": [
+        "Claude"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-075",
+      "host": "anthropic-com.ghost.io",
+      "expected_rule_policy_any": [
+        "Claude"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-076",
+      "host": "servd-anthropic-website.b-cdn.net",
+      "expected_rule_policy_any": [
+        "Claude"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-077",
+      "host": "http-intake.logs.us5.datadoghq.com",
+      "expected_rule_policy_any": [
+        "Claude"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-078",
+      "host": "browser-intake-us5-datadoghq.com",
+      "expected_rule_policy_any": [
+        "Claude"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-079",
+      "host": "chat.com",
+      "expected_rule_policy_any": [
+        "OpenAI"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-080",
+      "host": "sora.com",
+      "expected_rule_policy_any": [
+        "OpenAI"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-081",
+      "host": "chatgpt.com",
+      "expected_rule_policy_any": [
+        "OpenAI"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-082",
+      "host": "api.openai.com",
+      "expected_rule_policy_any": [
+        "OpenAI"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-083",
+      "host": "cdn.oaistatic.com",
+      "expected_rule_policy_any": [
+        "OpenAI"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-084",
+      "host": "files.oaiusercontent.com",
+      "expected_rule_policy_any": [
+        "OpenAI"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-085",
+      "host": "chatgpt.livekit.cloud",
+      "expected_rule_policy_any": [
+        "OpenAI"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-086",
+      "host": "chat.openai.com.cdn.cloudflare.net",
+      "expected_rule_policy_any": [
+        "OpenAI"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-087",
+      "host": "openai-api.arkoselabs.com",
+      "expected_rule_policy_any": [
+        "OpenAI"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-088",
+      "host": "openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net",
+      "expected_rule_policy_any": [
+        "OpenAI"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-089",
+      "host": "openaicomproductionae4b.blob.core.windows.net",
+      "expected_rule_policy_any": [
+        "OpenAI"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-090",
+      "host": "production-openaicom-storage.azureedge.net",
+      "expected_rule_policy_any": [
+        "OpenAI"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-091",
+      "host": "o33249.ingest.sentry.io",
+      "expected_rule_policy_any": [
+        "OpenAI"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-092",
+      "host": "muse.ai",
+      "expected_rule_policy_any": [
+        "Muse"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-093",
+      "host": "museai.com",
+      "expected_rule_policy_any": [
+        "Muse"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-094",
+      "host": "ecto1.ai",
+      "expected_rule_policy_any": [
+        "Muse"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-095",
+      "host": "grok.com",
+      "expected_rule_policy_any": [
+        "GrokBot"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-096",
+      "host": "api.x.ai",
+      "expected_rule_policy_any": [
+        "GrokBot"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-097",
+      "host": "grokipedia.com",
+      "expected_rule_policy_any": [
+        "GrokBot"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-098",
+      "host": "spacex.ai",
+      "expected_rule_policy_any": [
+        "GrokBot"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-099",
+      "host": "grokusercontent.com",
+      "expected_rule_policy_any": [
+        "GrokBot"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-100",
+      "host": "cursor.sh",
+      "expected_rule_policy_any": [
+        "GrokBot"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-101",
+      "host": "cursor-cdn.com",
+      "expected_rule_policy_any": [
+        "GrokBot"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-102",
+      "host": "cursorapi.com",
+      "expected_rule_policy_any": [
+        "GrokBot"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-103",
+      "host": "computer.cluster.cursorvm.com",
+      "expected_rule_policy_any": [
+        "GrokBot"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-104",
+      "host": "auth.cursor.com",
+      "expected_rule_policy_any": [
+        "GrokBot"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-105",
+      "host": "openrouter.ai",
+      "expected_rule_policy_any": [
+        "AI"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-106",
+      "host": "perplexity.ai",
+      "expected_rule_policy_any": [
+        "AI"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-107",
+      "host": "perplexity.com",
+      "expected_rule_policy_any": [
+        "AI"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-108",
+      "host": "pplx.ai",
+      "expected_rule_policy_any": [
+        "AI"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-109",
+      "host": "zed.dev",
+      "expected_rule_policy_any": [
+        "AI"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-110",
+      "host": "meta.ai",
+      "expected_rule_policy_any": [
+        "AI"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-111",
+      "host": "metaaivm.com",
+      "expected_rule_policy_any": [
+        "AI"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-112",
+      "host": "githubcopilot.com",
+      "expected_rule_policy_any": [
+        "AI"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-113",
+      "host": "pplx-res.cloudinary.com",
+      "expected_rule_policy_any": [
+        "AI"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-114",
+      "host": "copilot.microsoft.com",
+      "expected_rule_policy_any": [
+        "AI"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-115",
+      "host": "sydney.bing.com",
+      "expected_rule_policy_any": [
+        "AI"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-116",
+      "host": "www.bing.com",
+      "expected_rule_policy_any": [
+        "AI"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-117",
+      "host": "imagine.meta.com",
+      "expected_rule_policy_any": [
+        "AI"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-118",
+      "host": "www.facebook.com",
+      "expected_rule_policy_any": [
+        "Facebook"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-119",
+      "host": "graph.facebook.com",
+      "expected_rule_policy_any": [
+        "Facebook"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-120",
+      "host": "scontent.fbcdn.net",
+      "expected_rule_policy_any": [
+        "Facebook"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-121",
+      "host": "meta.com",
+      "expected_rule_policy_any": [
+        "Facebook"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-122",
+      "host": "apple.com",
+      "expected_rule_policy_any": [
+        "DMIT-LAX-TLS"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-123",
+      "host": "www.apple.com",
+      "expected_rule_policy_any": [
+        "DMIT-LAX-TLS"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-124",
+      "host": "secure.store.apple.com",
+      "expected_rule_policy_any": [
+        "DMIT-LAX-TLS"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-125",
+      "host": "storeimages.cdn-apple.com",
+      "expected_rule_policy_any": [
+        "DMIT-LAX-TLS"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-126",
+      "host": "idmsa.apple.com",
+      "expected_rule_policy_any": [
+        "苹果服务"
+      ],
+      "expected_policy": "DIRECT"
+    },
+    {
+      "id": "service-127",
+      "host": "appleid.apple.com",
+      "expected_rule_policy_any": [
+        "苹果服务"
+      ],
+      "expected_policy": "DIRECT"
+    },
+    {
+      "id": "service-128",
+      "host": "buy.itunes.apple.com",
+      "expected_rule_policy_any": [
+        "苹果服务"
+      ],
+      "expected_policy": "DIRECT"
+    },
+    {
+      "id": "service-129",
+      "host": "apple-pay-gateway.apple.com",
+      "expected_rule_policy_any": [
+        "苹果服务"
+      ],
+      "expected_policy": "DIRECT"
+    },
+    {
+      "id": "service-130",
+      "host": "www.icloud.com",
+      "expected_rule_policy_any": [
+        "苹果服务"
+      ],
+      "expected_policy": "DIRECT"
+    },
+    {
+      "id": "service-131",
+      "host": "setup.icloud.com",
+      "expected_rule_policy_any": [
+        "苹果服务"
+      ],
+      "expected_policy": "DIRECT"
+    },
+    {
+      "id": "service-132",
+      "host": "guzzoni.apple.com",
+      "expected_rule_policy_any": [
+        "AI"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-133",
+      "host": "api.smoot.apple.com",
+      "expected_rule_policy_any": [
+        "AI"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-134",
+      "host": "mask.icloud.com",
+      "expected_rule_policy_any": [
+        "AI"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-135",
+      "host": "mask-h2.icloud.com",
+      "expected_rule_policy_any": [
+        "AI"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-136",
+      "host": "api-siri.apple.com",
+      "expected_rule_policy_any": [
+        "AI"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-137",
+      "host": "apple-relay.cloudflare.com",
+      "expected_rule_policy_any": [
+        "AI"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-138",
+      "host": "www.cloudflare.com",
+      "expected_rule_policy_any": [
+        "出口检测"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-139",
+      "host": "browserleaks.com",
+      "expected_rule_policy_any": [
+        "出口检测"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-140",
+      "host": "ipleak.net",
+      "expected_rule_policy_any": [
+        "出口检测"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-141",
+      "host": "dnsleaktest.com",
+      "expected_rule_policy_any": [
+        "出口检测"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-142",
+      "host": "net.coffee",
+      "expected_rule_policy_any": [
+        "出口检测"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-143",
+      "host": "ippure.com",
+      "expected_rule_policy_any": [
+        "出口检测"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-144",
+      "host": "stun.l.google.com",
+      "expected_rule_policy_any": [
+        "WebRTC"
+      ],
+      "expected_policy": "HOME-Verizon-LAX",
+      "protocol": "UDP",
+      "port": 3478
+    },
+    {
+      "id": "service-145",
+      "host": "stun1.l.google.com",
+      "expected_rule_policy_any": [
+        "WebRTC"
+      ],
+      "expected_policy": "HOME-Verizon-LAX",
+      "protocol": "UDP",
+      "port": 3478
+    },
+    {
+      "id": "service-146",
+      "host": "stun.cloudflare.com",
+      "expected_rule_policy_any": [
+        "WebRTC"
+      ],
+      "expected_policy": "HOME-Verizon-LAX",
+      "protocol": "UDP",
+      "port": 3478
+    },
+    {
+      "id": "service-147",
+      "host": "unknown-stun.invalid",
+      "expected_rule_policy_any": [
+        "WebRTC"
+      ],
+      "expected_policy": "HOME-Verizon-LAX",
+      "protocol": "UDP",
+      "port": 3478
+    },
+    {
+      "id": "service-148",
+      "host": "unknown-stun.invalid",
+      "expected_rule_policy_any": [
+        "WebRTC"
+      ],
+      "expected_policy": "HOME-Verizon-LAX",
+      "protocol": "UDP",
+      "port": 19302
+    },
+    {
+      "id": "service-149",
+      "host": "unknown-stun.invalid",
+      "expected_rule_policy_any": [
+        "WebRTC"
+      ],
+      "expected_policy": "HOME-Verizon-LAX",
+      "protocol": "UDP",
+      "port": 5349
+    },
+    {
+      "id": "service-150",
+      "host": "api.tech26.de",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "expected_policy": "DIRECT",
+      "protocol": "UDP",
+      "port": 3478
+    },
+    {
+      "id": "service-151",
+      "host": "private-stun.invalid",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "expected_policy": "DMIT-LAX-TLS",
+      "protocol": "UDP",
+      "port": 40000
+    },
+    {
+      "id": "service-152",
+      "host": "other-tenant.auth0.com",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-153",
+      "host": "api.stripe.com",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-154",
+      "host": "unrelated.sentry.io",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-155",
+      "host": "other.livekit.cloud",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-156",
+      "host": "static.cloudflareinsights.com",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-157",
+      "host": "other.cloudflare.net",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-158",
+      "host": "other.azureedge.net",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-159",
+      "host": "other.azurefd.net",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-160",
+      "host": "other.blob.core.windows.net",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-161",
+      "host": "unrelated.windows.net",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-162",
+      "host": "unrelated.msecnd.net",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-163",
+      "host": "unrelated.cloudfront.net",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-164",
+      "host": "unrelated.us-west-2.amazonaws.com",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-165",
+      "host": "unrelated.execute-api.us-east-1.amazonaws.com",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-166",
+      "host": "other.azurewebsites.net",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-167",
+      "host": "unrelated.trafficmanager.net",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-168",
+      "host": "unrelated.edgesuite.net",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-169",
+      "host": "unrelated.b.akamaiedge.net",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-170",
+      "host": "unrelated.g.akamaiedge.net",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-171",
+      "host": "unrelated.cookielaw.org",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-172",
+      "host": "unrelated.onetrust.com",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-173",
+      "host": "unrelated.helpshift.com",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-174",
+      "host": "unrelated.optimizely.com",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-175",
+      "host": "notgoogle.example.invalid",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-176",
+      "host": "claude.example.invalid",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-177",
+      "host": "openai.example.invalid",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-178",
+      "host": "fooclaude.invalid",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-179",
+      "host": "unlisted.ms",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-180",
+      "host": "tenant.azure.cn",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "expected_policy": "DIRECT"
+    },
+    {
+      "id": "service-181",
+      "host": "bucket.amazonaws.com.cn",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "expected_policy": "DIRECT"
+    },
+    {
+      "id": "service-182",
+      "host": "www.baidu.com",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "expected_policy": "DIRECT"
+    },
+    {
+      "id": "service-183",
+      "host": "www.zhihu.com",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "expected_policy": "DIRECT"
+    },
+    {
+      "id": "service-184",
+      "host": "www.bilibili.cn",
+      "expected_rule_policy_any": [
+        "哔哩哔哩"
+      ],
+      "expected_policy": "DIRECT"
+    },
+    {
+      "id": "service-185",
+      "host": "portal.azure.com",
+      "expected_rule_policy_any": [
+        "微软服务"
+      ],
+      "expected_policy": "DIRECT"
+    },
+    {
+      "id": "service-186",
+      "host": "management.azure.com",
+      "expected_rule_policy_any": [
+        "微软服务"
+      ],
+      "expected_policy": "DIRECT"
+    },
+    {
+      "id": "service-187",
+      "host": "login.microsoftonline.com",
+      "expected_rule_policy_any": [
+        "微软服务"
+      ],
+      "expected_policy": "DIRECT"
+    },
+    {
+      "id": "service-188",
+      "host": "graph.windows.net",
+      "expected_rule_policy_any": [
+        "微软服务"
+      ],
+      "expected_policy": "DIRECT"
+    },
+    {
+      "id": "service-189",
+      "host": "www.microsoft.com",
+      "expected_rule_policy_any": [
+        "微软服务"
+      ],
+      "expected_policy": "DIRECT"
+    },
+    {
+      "id": "service-190",
+      "host": "github.com",
+      "expected_rule_policy_any": [
+        "GitHub"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-191",
+      "host": "github-cloud.s3.amazonaws.com",
+      "expected_rule_policy_any": [
+        "GitHub"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-192",
+      "host": "api.githubcopilot.com",
+      "expected_rule_policy_any": [
+        "AI"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-193",
+      "host": "www.netflix.com",
+      "expected_rule_policy_any": [
+        "Netflix"
+      ],
+      "expected_policy": "PROXY"
+    },
+    {
+      "id": "service-194",
+      "host": "abc.nflxvideo.net",
+      "expected_rule_policy_any": [
+        "Netflix"
+      ],
+      "expected_policy": "PROXY"
+    },
+    {
+      "id": "service-195",
+      "host": "disneyplus.com",
+      "expected_rule_policy_any": [
+        "Disney+"
+      ],
+      "expected_policy": "PROXY"
+    },
+    {
+      "id": "service-196",
+      "host": "disney-portal.my.onetrust.com",
+      "expected_rule_policy_any": [
+        "Disney+"
+      ],
+      "expected_policy": "PROXY"
+    },
+    {
+      "id": "service-197",
+      "host": "hbo.com",
+      "expected_rule_policy_any": [
+        "Max"
+      ],
+      "expected_policy": "PROXY"
+    },
+    {
+      "id": "service-198",
+      "host": "discomax.com",
+      "expected_rule_policy_any": [
+        "Max"
+      ],
+      "expected_policy": "PROXY"
+    },
+    {
+      "id": "service-199",
+      "host": "hbo.com.edgesuite.net",
+      "expected_rule_policy_any": [
+        "Max"
+      ],
+      "expected_policy": "PROXY"
+    },
+    {
+      "id": "service-200",
+      "host": "spotify.com",
+      "expected_rule_policy_any": [
+        "Spotify"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-201",
+      "host": "spotify.app.link",
+      "expected_rule_policy_any": [
+        "Spotify"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-202",
+      "host": "telegram.org",
+      "expected_rule_policy_any": [
+        "Telegram"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-203",
+      "host": "t.me",
+      "expected_rule_policy_any": [
+        "Telegram"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-204",
+      "host": "paypal.com",
+      "expected_rule_policy_any": [
+        "PayPal"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-205",
+      "host": "venmo.s3.amazonaws.com",
+      "expected_rule_policy_any": [
+        "PayPal"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-206",
+      "host": "twitter.com",
+      "expected_rule_policy_any": [
+        "XAI体系"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-207",
+      "host": "x.com",
+      "expected_rule_policy_any": [
+        "XAI体系"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-208",
+      "host": "spacex.com",
+      "expected_rule_policy_any": [
+        "XAI体系"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-209",
+      "host": "starlink.com",
+      "expected_rule_policy_any": [
+        "XAI体系"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-210",
+      "host": "amazon.com",
+      "expected_rule_policy_any": [
+        "Amazon"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-211",
+      "host": "tiktok.com",
+      "expected_rule_policy_any": [
+        "TikTok"
+      ],
+      "expected_policy": "PROXY"
+    },
+    {
+      "id": "service-212",
+      "host": "steampowered.com",
+      "expected_rule_policy_any": [
+        "游戏平台"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-213",
+      "host": "nintendo.com",
+      "expected_rule_policy_any": [
+        "游戏平台"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-214",
+      "host": "bilibili.com",
+      "expected_rule_policy_any": [
+        "哔哩哔哩"
+      ],
+      "expected_policy": "DIRECT"
+    },
+    {
+      "id": "service-215",
+      "host": "mail-api.proton.me",
+      "expected_rule_policy_any": [
+        "ProtonMail"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-216",
+      "host": "poe.com",
+      "expected_rule_policy_any": [
+        "DMIT-LAX-TLS"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-217",
+      "host": "xiyoucloud.pro",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "expected_policy": "DIRECT"
+    },
+    {
+      "id": "service-218",
+      "host": "",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "expected_policy": "DIRECT",
+      "address": "69.63.220.253"
+    },
+    {
+      "id": "service-219",
+      "host": "",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "expected_policy": "DIRECT",
+      "address": "191.223.220.97"
+    },
+    {
+      "id": "service-220",
+      "host": "",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "expected_policy": "DIRECT",
+      "address": "189.24.99.45"
+    },
+    {
+      "id": "service-221",
+      "host": "",
+      "expected_rule_policy_any": [
+        "Telegram"
+      ],
+      "expected_policy": "DMIT-LAX-TLS",
+      "address": "91.108.56.1"
+    },
+    {
+      "id": "service-222",
+      "host": "",
+      "expected_rule_policy_any": [
+        "Telegram"
+      ],
+      "expected_policy": "DMIT-LAX-TLS",
+      "address": "149.154.167.51"
+    },
+    {
+      "id": "service-223",
+      "host": "",
+      "expected_rule_policy_any": [
+        "Telegram"
+      ],
+      "expected_policy": "DMIT-LAX-TLS",
+      "address": "91.105.192.1"
+    },
+    {
+      "id": "service-224",
+      "host": "",
+      "expected_rule_policy_any": [
+        "Telegram"
+      ],
+      "expected_policy": "DMIT-LAX-TLS",
+      "address": "185.76.151.1"
+    },
+    {
+      "id": "service-225",
+      "host": "",
+      "expected_rule_policy_any": [
+        "Telegram"
+      ],
+      "expected_policy": "DMIT-LAX-TLS",
+      "address": "2001:b28:f23d::1"
+    },
+    {
+      "id": "service-226",
+      "host": "",
+      "expected_rule_policy_any": [
+        "Telegram"
+      ],
+      "expected_policy": "DMIT-LAX-TLS",
+      "address": "2a0a:f280::1"
+    },
+    {
+      "id": "service-227",
+      "host": "",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "expected_policy": "DIRECT",
+      "address": "10.10.0.2"
+    },
+    {
+      "id": "service-228",
+      "host": "",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "expected_policy": "DIRECT",
+      "address": "192.168.1.1"
+    },
+    {
+      "id": "service-229",
+      "host": "",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "expected_policy": "DIRECT",
+      "address": "100.64.0.1"
+    },
+    {
+      "id": "service-230",
+      "host": "",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "expected_policy": "DIRECT",
+      "address": "127.0.0.1"
+    },
+    {
+      "id": "service-231",
+      "host": "",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "expected_policy": "DIRECT",
+      "address": "fc00::1"
+    },
+    {
+      "id": "service-232",
+      "host": "",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "expected_policy": "DMIT-LAX-TLS",
+      "address": "13.112.191.184"
+    },
+    {
+      "id": "service-233",
+      "host": "unclassified.example.invalid",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "expected_policy": "DIRECT",
+      "address": "203.80.1.1",
+      "country": "CN"
+    },
+    {
+      "id": "service-234",
+      "host": "unclassified.example.invalid",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "expected_policy": "DMIT-LAX-TLS",
+      "address": "8.8.4.4",
+      "country": "US"
+    },
+    {
+      "id": "service-235",
+      "host": "tenor.com",
+      "expected_rule_policy_any": [
+        "Google"
+      ],
+      "expected_policy": "HOME-Verizon-LAX"
+    },
+    {
+      "id": "service-236",
+      "host": "other.akadns.net",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "host": "aweme.snssdk.com",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "expected_policy": "DIRECT",
+      "id": "service-237"
+    },
+    {
+      "host": "tp-pay.snssdk.com",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "expected_policy": "DIRECT",
+      "id": "service-238"
+    },
+    {
+      "host": "www.digicert.com",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "expected_policy": "DMIT-LAX-TLS",
+      "id": "service-239"
+    },
+    {
+      "host": "",
+      "address": "17.249.1.1",
+      "port": 5223,
+      "expected_rule_policy_any": [
+        "苹果服务"
+      ],
+      "expected_policy": "DIRECT",
+      "id": "service-240"
+    },
+    {
+      "host": "www.apple.com",
+      "address": "17.249.1.1",
+      "expected_rule_policy_any": [
+        "DMIT-LAX-TLS"
+      ],
+      "expected_policy": "DMIT-LAX-TLS",
+      "id": "service-241"
+    },
+    {
+      "host": "api.tech26.de",
+      "address": "173.194.1.1",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "expected_policy": "DIRECT",
+      "id": "service-242"
+    },
+    {
+      "host": "",
+      "address": "172.110.32.1",
+      "expected_rule_policy_any": [
+        "Google"
+      ],
+      "expected_policy": "HOME-Verizon-LAX",
+      "id": "service-243"
+    },
+    {
+      "host": "",
+      "address": "173.194.1.1",
+      "expected_rule_policy_any": [
+        "Google"
+      ],
+      "expected_policy": "HOME-Verizon-LAX",
+      "id": "service-244"
+    },
+    {
+      "host": "",
+      "address": "216.73.80.1",
+      "expected_rule_policy_any": [
+        "Google"
+      ],
+      "expected_policy": "HOME-Verizon-LAX",
+      "id": "service-245"
+    },
+    {
+      "host": "",
+      "address": "2620:120:e000::1",
+      "expected_rule_policy_any": [
+        "Google"
+      ],
+      "expected_policy": "HOME-Verizon-LAX",
+      "id": "service-246"
+    },
+    {
+      "host": "",
+      "address": "74.125.1.1",
+      "expected_rule_policy_any": [
+        "Google"
+      ],
+      "expected_policy": "HOME-Verizon-LAX",
+      "id": "service-247"
+    },
+    {
+      "id": "service-248",
+      "host": "ocsp.omniroot.com",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-249",
+      "host": "www.public-trust.com",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    },
+    {
+      "id": "service-250",
+      "host": "www.amazontrust.com",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "expected_policy": "DMIT-LAX-TLS"
+    }
+  ]
+}

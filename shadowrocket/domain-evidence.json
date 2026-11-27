@@ -1,0 +1,264 @@
+{
+  "release": "v31",
+  "reviewed": "2026-11-27",
+  "financial_review": {
+    "reviewed": "2026-11-27",
+    "scope": "Minimal first-party financial domain additions for v31. No runtime account traffic inspected.",
+    "recommended_additions": [
+      {
+        "service": "N26",
+        "type": "DOMAIN-SUFFIX",
+        "domain": "tech26.de",
+        "policy": "DIRECT",
+        "source": "https://n26.com/en-at/bug-bounty-program",
+        "evidence": "Official API entry api.tech26.de used for login/payments/address changes."
+      },
+      {
+        "service": "IBKR",
+        "type": "DOMAIN-SUFFIX",
+        "domain": "ibllc.com",
+        "policy": "DIRECT",
+        "source": "https://www.interactivebrokers.com/support/faq/content/1179651256",
+        "evidence": "Official TWS primary/backup hosts."
+      },
+      {
+        "service": "IBKR",
+        "type": "DOMAIN-SUFFIX",
+        "domain": "ibllc.com.cn",
+        "policy": "DIRECT",
+        "source": "https://www.interactivebrokers.com/support/faq/content/1179651256",
+        "evidence": "Official TWS primary/backup hosts."
+      },
+      {
+        "service": "IBKR",
+        "type": "DOMAIN-SUFFIX",
+        "domain": "interactivebrokers.ca",
+        "policy": "DIRECT",
+        "source": "https://www.interactivebrokers.com/support/faq/content/1179651256",
+        "evidence": "Official regional website host."
+      },
+      {
+        "service": "IBKR",
+        "type": "DOMAIN-SUFFIX",
+        "domain": "interactivebrokers.ie",
+        "policy": "DIRECT",
+        "source": "https://www.interactivebrokers.com/support/faq/content/1179651256",
+        "evidence": "Official regional website host."
+      },
+      {
+        "service": "IBKR",
+        "type": "DOMAIN-SUFFIX",
+        "domain": "interactivebrokers.co.uk",
+        "policy": "DIRECT",
+        "source": "https://www.interactivebrokers.com/support/faq/content/1179651256",
+        "evidence": "Official regional website host."
+      },
+      {
+        "service": "IBKR",
+        "type": "DOMAIN-SUFFIX",
+        "domain": "interactivebrokers.co.in",
+        "policy": "DIRECT",
+        "source": "https://www.interactivebrokers.com/support/faq/content/1179651256",
+        "evidence": "Official regional website host."
+      },
+      {
+        "service": "IBKR",
+        "type": "DOMAIN-SUFFIX",
+        "domain": "interactivebrokers.com.hk",
+        "policy": "DIRECT",
+        "source": "https://www.interactivebrokers.com/support/faq/content/1179651256",
+        "evidence": "Official regional website host."
+      },
+      {
+        "service": "IBKR",
+        "type": "DOMAIN-SUFFIX",
+        "domain": "interactivebrokers.com.sg",
+        "policy": "DIRECT",
+        "source": "https://www.interactivebrokers.com/support/faq/content/1179651256",
+        "evidence": "Official regional website host."
+      },
+      {
+        "service": "IBKR",
+        "type": "DOMAIN-SUFFIX",
+        "domain": "interactivebrokers.com.au",
+        "policy": "DIRECT",
+        "source": "https://www.interactivebrokers.com/support/faq/content/1179651256",
+        "evidence": "Official regional website host."
+      },
+      {
+        "service": "IBKR",
+        "type": "DOMAIN-SUFFIX",
+        "domain": "ibkr.com.cn",
+        "policy": "DIRECT",
+        "source": "https://www.interactivebrokers.com/support/faq/content/1179651256",
+        "evidence": "Official regional website host."
+      },
+      {
+        "service": "IBKR",
+        "type": "DOMAIN-SUFFIX",
+        "domain": "interactivebrokers.co.jp",
+        "policy": "DIRECT",
+        "source": "https://www.interactivebrokers.co.jp/jp/home.php",
+        "evidence": "Official Japanese subsidiary website, also named in IBKR official white-branding email guide. Avoid source FAQ's obvious Japan row duplication of co.in."
+      },
+      {
+        "service": "Schwab",
+        "type": "DOMAIN-SUFFIX",
+        "domain": "schwab.co.uk",
+        "policy": "DIRECT",
+        "source": "https://www.schwab.com/other-sites",
+        "evidence": "Linked as UK/Hong Kong investor service site by official Schwab directory."
+      },
+      {
+        "service": "Schwab",
+        "type": "DOMAIN-SUFFIX",
+        "domain": "schwab.com.hk",
+        "policy": "DIRECT",
+        "source": "https://www.schwab.com/other-sites",
+        "evidence": "Linked as UK/Hong Kong investor service site by official Schwab directory."
+      },
+      {
+        "service": "Schwab",
+        "type": "DOMAIN-SUFFIX",
+        "domain": "thinkorswim.com",
+        "policy": "DIRECT",
+        "source": "https://www.schwab.com/content/how-to-install-thinkorswim",
+        "evidence": "Official instructions direct Schwab account login to thinkorswim.com and trade.thinkorswim.com."
+      },
+      {
+        "service": "Bybit",
+        "type": "DOMAIN",
+        "domain": "api.bytick.com",
+        "policy": "Bybit",
+        "source": "https://bybit-exchange.github.io/docs/v5/guide",
+        "evidence": "Official second mainnet REST endpoint. Exact host is narrowest supported addition."
+      }
+    ],
+    "keep_existing": [
+      {
+        "service": "Wise",
+        "domains": [
+          "wise.com",
+          "transferwise.com"
+        ],
+        "source": "https://docs.wise.com/guides/developer/auth-and-security/embedded-sca-component",
+        "evidence": "api.wise.com production SCA/payments API already within wise.com; no verified extra root required."
+      },
+      {
+        "service": "Starryblu",
+        "domains": [
+          "starryblu.com",
+          "wotransfer.com"
+        ],
+        "source": "https://www.starryblu.com/en/contact",
+        "evidence": "Official site uses h2static.wotransfer.com images and names Wotransfer Pte Ltd/data-protection email."
+      },
+      {
+        "service": "OKX",
+        "domains": [
+          "okx.com",
+          "okex.com",
+          "oklink.com"
+        ],
+        "source": "https://www.okx.com/docs-v5/en/",
+        "evidence": "Current snapshot already has all three; official production REST/WebSocket documented under okx.com. Legacy two retained, no fresh exhaustive ownership audit claimed."
+      },
+      {
+        "service": "Coinbase",
+        "domains": [
+          "coinbase.com"
+        ],
+        "source": "https://docs.cdp.coinbase.com/coinbase-app/advanced-trade-apis/overview",
+        "evidence": "Main authenticated Coinbase services under coinbase.com. No new shared CDN root inferred."
+      }
+    ],
+    "optional_verified": [
+      {
+        "service": "Bybit",
+        "domains": [
+          "bybitglobal.com"
+        ],
+        "source": "https://announcements.bybit.com/vi-VN/article/-bybit-card-2-5--bltaf3e2c1a2618fd7d/",
+        "evidence": "Official Bybit announcement links Card dashboard on bybitglobal.com."
+      },
+      {
+        "service": "Bybit",
+        "exact_hosts": [
+          "api.bybit.tr",
+          "api.bybit.kz",
+          "api.bybitgeorgia.ge",
+          "api.bybit.ae",
+          "api.bybit.eu",
+          "api.bybit.id"
+        ],
+        "source": "https://bybit-exchange.github.io/docs/v5/guide",
+        "evidence": "Region-specific API endpoints; not necessary to change user's current account region or primary routing."
+      },
+      {
+        "service": "Coinbase",
+        "domains": [
+          "cb.id"
+        ],
+        "source": "https://www.coinbase.com/en-gb/blog/how-coinbase-is-building-the-bridge-to-web3",
+        "evidence": "Coinbase Wallet decentralized identity namespace; not evidence it is consumer exchange login/CDN dependency."
+      }
+    ],
+    "exclude_or_pending": [
+      {
+        "domain": "wiseassets.com",
+        "reason": "No primary source verified Wise service use or ownership. Wise Assets corporate name does not establish domain."
+      },
+      {
+        "domain": "coinbasecloud.net",
+        "reason": "No primary source verified in this review; do not invent coverage."
+      },
+      {
+        "domain": "cbstatic.net",
+        "reason": "No Coinbase primary evidence, search results associate with unrelated ClickBank assets; do not add."
+      },
+      {
+        "domain": "schwabws.com",
+        "reason": "No primary source verified; requires real request evidence plus ownership validation."
+      },
+      {
+        "domain": "schwabcdn.com",
+        "reason": "Legacy existing rule; not independently reverified by official docs. Do not expand based solely on its name."
+      },
+      {
+        "domain": "manepa.jp",
+        "reason": "Bybit docs list api.manepa.jp for Japan partner; do not route all partner parent domain."
+      },
+      {
+        "domain": "spark-fintech.com",
+        "reason": "Bybit docs list api.spark-fintech.com for Hong Kong partner; do not route all partner parent domain."
+      },
+      {
+        "domain": "auth0.com/stripe.com/amazonaws.com/cloudfront.net",
+        "reason": "Shared provider roots must not be swept into a bank's policy. IBKR doc's s3.amazonaws.com cloud-settings entry is not justification for global S3 direct."
+      }
+    ]
+  },
+  "claude": {
+    "primary": "https://code.claude.com/docs/en/network-config",
+    "scope": "Retained user-supplied roots; precise dedicated tenant entries; optional exact Datadog hosts also serve other clients. No blanket vendor roots."
+  },
+  "openai": {
+    "inherited_primary_roots": [
+      "openai.com",
+      "chatgpt.com",
+      "oaistatic.com",
+      "oaiusercontent.com"
+    ],
+    "source": "https://github.com/blackmatrix7/ios_rule_script/blob/0b6897dc17e0c513d25449c935a9694818e32f0c/rule/Shadowrocket/OpenAI/OpenAI.list",
+    "scope": "Reviewed narrow tenant entries only; chat.com and sora.com were already present in the v30 AI source and are now assigned OpenAI. Shared infrastructure remains general fallback."
+  },
+  "legacy_ai_exceptions": {
+    "source": "https://github.com/iab0x00/ProxyRules/blob/96cfe3360e70a2031b034fa0e8dd8228d1a7c3c7/Rule/AI.txt",
+    "scope": "Three Apple-only wildcard rules and named Apple/Microsoft AI exceptions retained explicitly; broad shared providers, brand keywords and Facebook misclassification removed."
+  },
+  "google_additions": {
+    "tenor": "https://support.google.com/tenor/answer/10455265?hl=en",
+    "artifact_registry": "https://docs.cloud.google.com/artifact-registry/docs/repositories/repo-locations",
+    "scope": "Google dedicated TLDs plus Google Cloud hosting namespaces follow user-wide Google policy; third-party tenants under these hostnames are part of this explicit exception."
+  }
+}

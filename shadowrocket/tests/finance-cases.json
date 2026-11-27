@@ -1,0 +1,2116 @@
+{
+  "schema_version": 1,
+  "semantics": {
+    "expected_policy": "Terminal policy after recursive selector resolution. Use expected_policy_aliases only for exact permitted Bybit display variants.",
+    "expected_rule_policy_any": "First matched outer rule target; financial DIRECT tests intentionally demand direct rules, not a mutable selector default.",
+    "runtime_assumption": "Rule/config routing enabled; all required nodes imported with exact names; remote snapshots loaded; no host DNS/IP resolution performed by these static fixtures.",
+    "live_verification_gap": "Does not reproduce bank login, device node inventory, DNS/WebRTC traffic, missing-node runtime behavior or account risk controls."
+  },
+  "counts": {
+    "ibkr_root_count": 13,
+    "host_tests": 135
+  },
+  "policy_overrides_for_adversarial_recheck": [
+    {
+      "海外主力": "DMIT-TYO-TLS",
+      "PROXY": "DMIT-TYO-TLS"
+    },
+    {
+      "海外主力": "PROXY",
+      "PROXY": "DMIT-TYO-TLS"
+    }
+  ],
+  "override_expectation": "DIRECT/Coinbase/Bybit tests remain at their specified terminal. Safepal and boundary-negative cases intentionally follow overseas-main selection; do not require LAX for them under override.",
+  "direct_root_inventory": {
+    "N26": [
+      "n26.com",
+      "number26.de",
+      "tech26.de"
+    ],
+    "Wise": [
+      "wise.com",
+      "transferwise.com"
+    ],
+    "IBKR": [
+      "interactivebrokers.com",
+      "ibkr.com",
+      "ibllc.com",
+      "ibllc.com.cn",
+      "interactivebrokers.ca",
+      "interactivebrokers.ie",
+      "interactivebrokers.co.uk",
+      "interactivebrokers.co.in",
+      "interactivebrokers.com.hk",
+      "interactivebrokers.com.sg",
+      "interactivebrokers.com.au",
+      "ibkr.com.cn",
+      "interactivebrokers.co.jp"
+    ],
+    "嘉信": [
+      "schwab.com",
+      "schwabcdn.com",
+      "schwab.co.uk",
+      "schwab.com.hk",
+      "thinkorswim.com"
+    ],
+    "Starryblu": [
+      "starryblu.com",
+      "wotransfer.com"
+    ],
+    "OKX": [
+      "okx.com",
+      "okex.com",
+      "oklink.com"
+    ]
+  },
+  "bybit_node_filter_tests": [
+    {
+      "name": "🇨🇳 台湾高级 IEPL 专线 1",
+      "should_match": true
+    },
+    {
+      "name": "🇹🇼 台湾高级 IEPL 专线 1",
+      "should_match": true
+    },
+    {
+      "name": "台湾高级 IEPL 专线 1",
+      "should_match": true
+    },
+    {
+      "name": "🇨🇳 台湾高级 IEPL 专线 2",
+      "should_match": false
+    },
+    {
+      "name": "🇨🇳 台湾高级 IEPL 专线 10",
+      "should_match": false
+    },
+    {
+      "name": "🇨🇳 台湾高级 IEPL 专线 11",
+      "should_match": false
+    },
+    {
+      "name": "🇨🇳 台湾高级 IEPL 专线 1 实验",
+      "should_match": false
+    },
+    {
+      "name": "实验 台湾高级 IEPL 专线 1",
+      "should_match": false
+    },
+    {
+      "name": "台湾标准 IEPL 专线 1",
+      "should_match": false
+    },
+    {
+      "name": "美国高级 IEPL 专线 1",
+      "should_match": false
+    },
+    {
+      "name": "DIRECT",
+      "should_match": false
+    },
+    {
+      "name": "PROXY",
+      "should_match": false
+    }
+  ],
+  "tests": [
+    {
+      "id": "finance-001",
+      "host": "n26.com",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "N26 根域应直接命中固定直连，不能仅靠分组默认值。",
+      "service": "N26",
+      "fixture_kind": "root-boundary",
+      "root": "n26.com"
+    },
+    {
+      "id": "finance-002",
+      "host": "boundary-check.n26.com",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "N26 子域后缀覆盖回归；这是合成主机，不宣称实际生产端点。",
+      "service": "N26",
+      "fixture_kind": "synthetic-subdomain",
+      "root": "n26.com"
+    },
+    {
+      "id": "finance-003",
+      "host": "number26.de",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "N26 根域应直接命中固定直连，不能仅靠分组默认值。",
+      "service": "N26",
+      "fixture_kind": "root-boundary",
+      "root": "number26.de"
+    },
+    {
+      "id": "finance-004",
+      "host": "boundary-check.number26.de",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "N26 子域后缀覆盖回归；这是合成主机，不宣称实际生产端点。",
+      "service": "N26",
+      "fixture_kind": "synthetic-subdomain",
+      "root": "number26.de"
+    },
+    {
+      "id": "finance-005",
+      "host": "tech26.de",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "N26 根域应直接命中固定直连，不能仅靠分组默认值。",
+      "service": "N26",
+      "fixture_kind": "root-boundary",
+      "root": "tech26.de"
+    },
+    {
+      "id": "finance-006",
+      "host": "boundary-check.tech26.de",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "N26 子域后缀覆盖回归；这是合成主机，不宣称实际生产端点。",
+      "service": "N26",
+      "fixture_kind": "synthetic-subdomain",
+      "root": "tech26.de"
+    },
+    {
+      "id": "finance-007",
+      "host": "wise.com",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "Wise 根域应直接命中固定直连，不能仅靠分组默认值。",
+      "service": "Wise",
+      "fixture_kind": "root-boundary",
+      "root": "wise.com"
+    },
+    {
+      "id": "finance-008",
+      "host": "boundary-check.wise.com",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "Wise 子域后缀覆盖回归；这是合成主机，不宣称实际生产端点。",
+      "service": "Wise",
+      "fixture_kind": "synthetic-subdomain",
+      "root": "wise.com"
+    },
+    {
+      "id": "finance-009",
+      "host": "transferwise.com",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "Wise 根域应直接命中固定直连，不能仅靠分组默认值。",
+      "service": "Wise",
+      "fixture_kind": "root-boundary",
+      "root": "transferwise.com"
+    },
+    {
+      "id": "finance-010",
+      "host": "boundary-check.transferwise.com",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "Wise 子域后缀覆盖回归；这是合成主机，不宣称实际生产端点。",
+      "service": "Wise",
+      "fixture_kind": "synthetic-subdomain",
+      "root": "transferwise.com"
+    },
+    {
+      "id": "finance-011",
+      "host": "interactivebrokers.com",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "IBKR 根域应直接命中固定直连，不能仅靠分组默认值。",
+      "service": "IBKR",
+      "fixture_kind": "root-boundary",
+      "root": "interactivebrokers.com"
+    },
+    {
+      "id": "finance-012",
+      "host": "boundary-check.interactivebrokers.com",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "IBKR 子域后缀覆盖回归；这是合成主机，不宣称实际生产端点。",
+      "service": "IBKR",
+      "fixture_kind": "synthetic-subdomain",
+      "root": "interactivebrokers.com"
+    },
+    {
+      "id": "finance-013",
+      "host": "ibkr.com",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "IBKR 根域应直接命中固定直连，不能仅靠分组默认值。",
+      "service": "IBKR",
+      "fixture_kind": "root-boundary",
+      "root": "ibkr.com"
+    },
+    {
+      "id": "finance-014",
+      "host": "boundary-check.ibkr.com",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "IBKR 子域后缀覆盖回归；这是合成主机，不宣称实际生产端点。",
+      "service": "IBKR",
+      "fixture_kind": "synthetic-subdomain",
+      "root": "ibkr.com"
+    },
+    {
+      "id": "finance-015",
+      "host": "ibllc.com",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "IBKR 根域应直接命中固定直连，不能仅靠分组默认值。",
+      "service": "IBKR",
+      "fixture_kind": "root-boundary",
+      "root": "ibllc.com"
+    },
+    {
+      "id": "finance-016",
+      "host": "boundary-check.ibllc.com",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "IBKR 子域后缀覆盖回归；这是合成主机，不宣称实际生产端点。",
+      "service": "IBKR",
+      "fixture_kind": "synthetic-subdomain",
+      "root": "ibllc.com"
+    },
+    {
+      "id": "finance-017",
+      "host": "ibllc.com.cn",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "IBKR 根域应直接命中固定直连，不能仅靠分组默认值。",
+      "service": "IBKR",
+      "fixture_kind": "root-boundary",
+      "root": "ibllc.com.cn"
+    },
+    {
+      "id": "finance-018",
+      "host": "boundary-check.ibllc.com.cn",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "IBKR 子域后缀覆盖回归；这是合成主机，不宣称实际生产端点。",
+      "service": "IBKR",
+      "fixture_kind": "synthetic-subdomain",
+      "root": "ibllc.com.cn"
+    },
+    {
+      "id": "finance-019",
+      "host": "interactivebrokers.ca",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "IBKR 根域应直接命中固定直连，不能仅靠分组默认值。",
+      "service": "IBKR",
+      "fixture_kind": "root-boundary",
+      "root": "interactivebrokers.ca"
+    },
+    {
+      "id": "finance-020",
+      "host": "boundary-check.interactivebrokers.ca",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "IBKR 子域后缀覆盖回归；这是合成主机，不宣称实际生产端点。",
+      "service": "IBKR",
+      "fixture_kind": "synthetic-subdomain",
+      "root": "interactivebrokers.ca"
+    },
+    {
+      "id": "finance-021",
+      "host": "interactivebrokers.ie",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "IBKR 根域应直接命中固定直连，不能仅靠分组默认值。",
+      "service": "IBKR",
+      "fixture_kind": "root-boundary",
+      "root": "interactivebrokers.ie"
+    },
+    {
+      "id": "finance-022",
+      "host": "boundary-check.interactivebrokers.ie",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "IBKR 子域后缀覆盖回归；这是合成主机，不宣称实际生产端点。",
+      "service": "IBKR",
+      "fixture_kind": "synthetic-subdomain",
+      "root": "interactivebrokers.ie"
+    },
+    {
+      "id": "finance-023",
+      "host": "interactivebrokers.co.uk",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "IBKR 根域应直接命中固定直连，不能仅靠分组默认值。",
+      "service": "IBKR",
+      "fixture_kind": "root-boundary",
+      "root": "interactivebrokers.co.uk"
+    },
+    {
+      "id": "finance-024",
+      "host": "boundary-check.interactivebrokers.co.uk",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "IBKR 子域后缀覆盖回归；这是合成主机，不宣称实际生产端点。",
+      "service": "IBKR",
+      "fixture_kind": "synthetic-subdomain",
+      "root": "interactivebrokers.co.uk"
+    },
+    {
+      "id": "finance-025",
+      "host": "interactivebrokers.co.in",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "IBKR 根域应直接命中固定直连，不能仅靠分组默认值。",
+      "service": "IBKR",
+      "fixture_kind": "root-boundary",
+      "root": "interactivebrokers.co.in"
+    },
+    {
+      "id": "finance-026",
+      "host": "boundary-check.interactivebrokers.co.in",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "IBKR 子域后缀覆盖回归；这是合成主机，不宣称实际生产端点。",
+      "service": "IBKR",
+      "fixture_kind": "synthetic-subdomain",
+      "root": "interactivebrokers.co.in"
+    },
+    {
+      "id": "finance-027",
+      "host": "interactivebrokers.com.hk",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "IBKR 根域应直接命中固定直连，不能仅靠分组默认值。",
+      "service": "IBKR",
+      "fixture_kind": "root-boundary",
+      "root": "interactivebrokers.com.hk"
+    },
+    {
+      "id": "finance-028",
+      "host": "boundary-check.interactivebrokers.com.hk",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "IBKR 子域后缀覆盖回归；这是合成主机，不宣称实际生产端点。",
+      "service": "IBKR",
+      "fixture_kind": "synthetic-subdomain",
+      "root": "interactivebrokers.com.hk"
+    },
+    {
+      "id": "finance-029",
+      "host": "interactivebrokers.com.sg",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "IBKR 根域应直接命中固定直连，不能仅靠分组默认值。",
+      "service": "IBKR",
+      "fixture_kind": "root-boundary",
+      "root": "interactivebrokers.com.sg"
+    },
+    {
+      "id": "finance-030",
+      "host": "boundary-check.interactivebrokers.com.sg",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "IBKR 子域后缀覆盖回归；这是合成主机，不宣称实际生产端点。",
+      "service": "IBKR",
+      "fixture_kind": "synthetic-subdomain",
+      "root": "interactivebrokers.com.sg"
+    },
+    {
+      "id": "finance-031",
+      "host": "interactivebrokers.com.au",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "IBKR 根域应直接命中固定直连，不能仅靠分组默认值。",
+      "service": "IBKR",
+      "fixture_kind": "root-boundary",
+      "root": "interactivebrokers.com.au"
+    },
+    {
+      "id": "finance-032",
+      "host": "boundary-check.interactivebrokers.com.au",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "IBKR 子域后缀覆盖回归；这是合成主机，不宣称实际生产端点。",
+      "service": "IBKR",
+      "fixture_kind": "synthetic-subdomain",
+      "root": "interactivebrokers.com.au"
+    },
+    {
+      "id": "finance-033",
+      "host": "ibkr.com.cn",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "IBKR 根域应直接命中固定直连，不能仅靠分组默认值。",
+      "service": "IBKR",
+      "fixture_kind": "root-boundary",
+      "root": "ibkr.com.cn"
+    },
+    {
+      "id": "finance-034",
+      "host": "boundary-check.ibkr.com.cn",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "IBKR 子域后缀覆盖回归；这是合成主机，不宣称实际生产端点。",
+      "service": "IBKR",
+      "fixture_kind": "synthetic-subdomain",
+      "root": "ibkr.com.cn"
+    },
+    {
+      "id": "finance-035",
+      "host": "interactivebrokers.co.jp",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "IBKR 根域应直接命中固定直连，不能仅靠分组默认值。",
+      "service": "IBKR",
+      "fixture_kind": "root-boundary",
+      "root": "interactivebrokers.co.jp"
+    },
+    {
+      "id": "finance-036",
+      "host": "boundary-check.interactivebrokers.co.jp",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "IBKR 子域后缀覆盖回归；这是合成主机，不宣称实际生产端点。",
+      "service": "IBKR",
+      "fixture_kind": "synthetic-subdomain",
+      "root": "interactivebrokers.co.jp"
+    },
+    {
+      "id": "finance-037",
+      "host": "schwab.com",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "嘉信 根域应直接命中固定直连，不能仅靠分组默认值。",
+      "service": "嘉信",
+      "fixture_kind": "root-boundary",
+      "root": "schwab.com"
+    },
+    {
+      "id": "finance-038",
+      "host": "boundary-check.schwab.com",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "嘉信 子域后缀覆盖回归；这是合成主机，不宣称实际生产端点。",
+      "service": "嘉信",
+      "fixture_kind": "synthetic-subdomain",
+      "root": "schwab.com"
+    },
+    {
+      "id": "finance-039",
+      "host": "schwabcdn.com",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "嘉信 根域应直接命中固定直连，不能仅靠分组默认值。",
+      "service": "嘉信",
+      "fixture_kind": "root-boundary",
+      "root": "schwabcdn.com"
+    },
+    {
+      "id": "finance-040",
+      "host": "boundary-check.schwabcdn.com",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "嘉信 子域后缀覆盖回归；这是合成主机，不宣称实际生产端点。",
+      "service": "嘉信",
+      "fixture_kind": "synthetic-subdomain",
+      "root": "schwabcdn.com"
+    },
+    {
+      "id": "finance-041",
+      "host": "schwab.co.uk",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "嘉信 根域应直接命中固定直连，不能仅靠分组默认值。",
+      "service": "嘉信",
+      "fixture_kind": "root-boundary",
+      "root": "schwab.co.uk"
+    },
+    {
+      "id": "finance-042",
+      "host": "boundary-check.schwab.co.uk",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "嘉信 子域后缀覆盖回归；这是合成主机，不宣称实际生产端点。",
+      "service": "嘉信",
+      "fixture_kind": "synthetic-subdomain",
+      "root": "schwab.co.uk"
+    },
+    {
+      "id": "finance-043",
+      "host": "schwab.com.hk",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "嘉信 根域应直接命中固定直连，不能仅靠分组默认值。",
+      "service": "嘉信",
+      "fixture_kind": "root-boundary",
+      "root": "schwab.com.hk"
+    },
+    {
+      "id": "finance-044",
+      "host": "boundary-check.schwab.com.hk",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "嘉信 子域后缀覆盖回归；这是合成主机，不宣称实际生产端点。",
+      "service": "嘉信",
+      "fixture_kind": "synthetic-subdomain",
+      "root": "schwab.com.hk"
+    },
+    {
+      "id": "finance-045",
+      "host": "thinkorswim.com",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "嘉信 根域应直接命中固定直连，不能仅靠分组默认值。",
+      "service": "嘉信",
+      "fixture_kind": "root-boundary",
+      "root": "thinkorswim.com"
+    },
+    {
+      "id": "finance-046",
+      "host": "boundary-check.thinkorswim.com",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "嘉信 子域后缀覆盖回归；这是合成主机，不宣称实际生产端点。",
+      "service": "嘉信",
+      "fixture_kind": "synthetic-subdomain",
+      "root": "thinkorswim.com"
+    },
+    {
+      "id": "finance-047",
+      "host": "starryblu.com",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "Starryblu 根域应直接命中固定直连，不能仅靠分组默认值。",
+      "service": "Starryblu",
+      "fixture_kind": "root-boundary",
+      "root": "starryblu.com"
+    },
+    {
+      "id": "finance-048",
+      "host": "boundary-check.starryblu.com",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "Starryblu 子域后缀覆盖回归；这是合成主机，不宣称实际生产端点。",
+      "service": "Starryblu",
+      "fixture_kind": "synthetic-subdomain",
+      "root": "starryblu.com"
+    },
+    {
+      "id": "finance-049",
+      "host": "wotransfer.com",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "Starryblu 根域应直接命中固定直连，不能仅靠分组默认值。",
+      "service": "Starryblu",
+      "fixture_kind": "root-boundary",
+      "root": "wotransfer.com"
+    },
+    {
+      "id": "finance-050",
+      "host": "boundary-check.wotransfer.com",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "Starryblu 子域后缀覆盖回归；这是合成主机，不宣称实际生产端点。",
+      "service": "Starryblu",
+      "fixture_kind": "synthetic-subdomain",
+      "root": "wotransfer.com"
+    },
+    {
+      "id": "finance-051",
+      "host": "okx.com",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "OKX 根域应直接命中固定直连，不能仅靠分组默认值。",
+      "service": "OKX",
+      "fixture_kind": "root-boundary",
+      "root": "okx.com"
+    },
+    {
+      "id": "finance-052",
+      "host": "boundary-check.okx.com",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "OKX 子域后缀覆盖回归；这是合成主机，不宣称实际生产端点。",
+      "service": "OKX",
+      "fixture_kind": "synthetic-subdomain",
+      "root": "okx.com"
+    },
+    {
+      "id": "finance-053",
+      "host": "okex.com",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "OKX 根域应直接命中固定直连，不能仅靠分组默认值。",
+      "service": "OKX",
+      "fixture_kind": "root-boundary",
+      "root": "okex.com"
+    },
+    {
+      "id": "finance-054",
+      "host": "boundary-check.okex.com",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "OKX 子域后缀覆盖回归；这是合成主机，不宣称实际生产端点。",
+      "service": "OKX",
+      "fixture_kind": "synthetic-subdomain",
+      "root": "okex.com"
+    },
+    {
+      "id": "finance-055",
+      "host": "oklink.com",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "OKX 根域应直接命中固定直连，不能仅靠分组默认值。",
+      "service": "OKX",
+      "fixture_kind": "root-boundary",
+      "root": "oklink.com"
+    },
+    {
+      "id": "finance-056",
+      "host": "boundary-check.oklink.com",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "OKX 子域后缀覆盖回归；这是合成主机，不宣称实际生产端点。",
+      "service": "OKX",
+      "fixture_kind": "synthetic-subdomain",
+      "root": "oklink.com"
+    },
+    {
+      "id": "finance-057",
+      "host": "app.n26.com",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "N26 官方页面或 API 域，验证主站与登录 API 出口一致。",
+      "service": "N26",
+      "fixture_kind": "documented-host"
+    },
+    {
+      "id": "finance-058",
+      "host": "my.n26.com",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "N26 官方页面或 API 域，验证主站与登录 API 出口一致。",
+      "service": "N26",
+      "fixture_kind": "documented-host"
+    },
+    {
+      "id": "finance-059",
+      "host": "api.tech26.de",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "N26 官方页面或 API 域，验证主站与登录 API 出口一致。",
+      "service": "N26",
+      "fixture_kind": "documented-host"
+    },
+    {
+      "id": "finance-060",
+      "host": "api.wise.com",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "Wise 官方认证/付款 API 已在 wise.com 后缀覆盖范围。",
+      "service": "Wise",
+      "fixture_kind": "documented-host"
+    },
+    {
+      "id": "finance-061",
+      "host": "ndc1.ibllc.com",
+      "protocol": "TCP",
+      "port": 4000,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "IBKR 官方 TWS 主备主机；4000 行情，4001 认证/交易。",
+      "service": "IBKR",
+      "fixture_kind": "documented-host"
+    },
+    {
+      "id": "finance-062",
+      "host": "ndc1.ibllc.com",
+      "protocol": "TCP",
+      "port": 4001,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "IBKR 官方 TWS 主备主机；4000 行情，4001 认证/交易。",
+      "service": "IBKR",
+      "fixture_kind": "documented-host"
+    },
+    {
+      "id": "finance-063",
+      "host": "cdc1.ibllc.com",
+      "protocol": "TCP",
+      "port": 4000,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "IBKR 官方 TWS 主备主机；4000 行情，4001 认证/交易。",
+      "service": "IBKR",
+      "fixture_kind": "documented-host"
+    },
+    {
+      "id": "finance-064",
+      "host": "cdc1.ibllc.com",
+      "protocol": "TCP",
+      "port": 4001,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "IBKR 官方 TWS 主备主机；4000 行情，4001 认证/交易。",
+      "service": "IBKR",
+      "fixture_kind": "documented-host"
+    },
+    {
+      "id": "finance-065",
+      "host": "zdc1.ibllc.com",
+      "protocol": "TCP",
+      "port": 4000,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "IBKR 官方 TWS 主备主机；4000 行情，4001 认证/交易。",
+      "service": "IBKR",
+      "fixture_kind": "documented-host"
+    },
+    {
+      "id": "finance-066",
+      "host": "zdc1.ibllc.com",
+      "protocol": "TCP",
+      "port": 4001,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "IBKR 官方 TWS 主备主机；4000 行情，4001 认证/交易。",
+      "service": "IBKR",
+      "fixture_kind": "documented-host"
+    },
+    {
+      "id": "finance-067",
+      "host": "ldc1.ibllc.com",
+      "protocol": "TCP",
+      "port": 4000,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "IBKR 官方 TWS 主备主机；4000 行情，4001 认证/交易。",
+      "service": "IBKR",
+      "fixture_kind": "documented-host"
+    },
+    {
+      "id": "finance-068",
+      "host": "ldc1.ibllc.com",
+      "protocol": "TCP",
+      "port": 4001,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "IBKR 官方 TWS 主备主机；4000 行情，4001 认证/交易。",
+      "service": "IBKR",
+      "fixture_kind": "documented-host"
+    },
+    {
+      "id": "finance-069",
+      "host": "hdc1.ibllc.com",
+      "protocol": "TCP",
+      "port": 4000,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "IBKR 官方 TWS 主备主机；4000 行情，4001 认证/交易。",
+      "service": "IBKR",
+      "fixture_kind": "documented-host"
+    },
+    {
+      "id": "finance-070",
+      "host": "hdc1.ibllc.com",
+      "protocol": "TCP",
+      "port": 4001,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "IBKR 官方 TWS 主备主机；4000 行情，4001 认证/交易。",
+      "service": "IBKR",
+      "fixture_kind": "documented-host"
+    },
+    {
+      "id": "finance-071",
+      "host": "sdc1.ibllc.com",
+      "protocol": "TCP",
+      "port": 4000,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "IBKR 官方 TWS 主备主机；4000 行情，4001 认证/交易。",
+      "service": "IBKR",
+      "fixture_kind": "documented-host"
+    },
+    {
+      "id": "finance-072",
+      "host": "sdc1.ibllc.com",
+      "protocol": "TCP",
+      "port": 4001,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "IBKR 官方 TWS 主备主机；4000 行情，4001 认证/交易。",
+      "service": "IBKR",
+      "fixture_kind": "documented-host"
+    },
+    {
+      "id": "finance-073",
+      "host": "mcgw1.ibllc.com.cn",
+      "protocol": "TCP",
+      "port": 4000,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "IBKR 官方 TWS 主备主机；4000 行情，4001 认证/交易。",
+      "service": "IBKR",
+      "fixture_kind": "documented-host"
+    },
+    {
+      "id": "finance-074",
+      "host": "mcgw1.ibllc.com.cn",
+      "protocol": "TCP",
+      "port": 4001,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "IBKR 官方 TWS 主备主机；4000 行情，4001 认证/交易。",
+      "service": "IBKR",
+      "fixture_kind": "documented-host"
+    },
+    {
+      "id": "finance-075",
+      "host": "ndc1-hb1.ibllc.com",
+      "protocol": "TCP",
+      "port": 4000,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "IBKR 官方 TWS 主备主机；4000 行情，4001 认证/交易。",
+      "service": "IBKR",
+      "fixture_kind": "documented-host"
+    },
+    {
+      "id": "finance-076",
+      "host": "ndc1-hb1.ibllc.com",
+      "protocol": "TCP",
+      "port": 4001,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "IBKR 官方 TWS 主备主机；4000 行情，4001 认证/交易。",
+      "service": "IBKR",
+      "fixture_kind": "documented-host"
+    },
+    {
+      "id": "finance-077",
+      "host": "mcgw1-hb2.ibllc.com.cn",
+      "protocol": "TCP",
+      "port": 4000,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "IBKR 官方 TWS 主备主机；4000 行情，4001 认证/交易。",
+      "service": "IBKR",
+      "fixture_kind": "documented-host"
+    },
+    {
+      "id": "finance-078",
+      "host": "mcgw1-hb2.ibllc.com.cn",
+      "protocol": "TCP",
+      "port": 4001,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "IBKR 官方 TWS 主备主机；4000 行情，4001 认证/交易。",
+      "service": "IBKR",
+      "fixture_kind": "documented-host"
+    },
+    {
+      "id": "finance-079",
+      "host": "api.ibkr.com",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "IBKR 官方客户端门户/API/更新主机保持直连。",
+      "service": "IBKR",
+      "fixture_kind": "documented-host"
+    },
+    {
+      "id": "finance-080",
+      "host": "ndcdyn.interactivebrokers.com",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "IBKR 官方客户端门户/API/更新主机保持直连。",
+      "service": "IBKR",
+      "fixture_kind": "documented-host"
+    },
+    {
+      "id": "finance-081",
+      "host": "cdcdyn.interactivebrokers.com",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "IBKR 官方客户端门户/API/更新主机保持直连。",
+      "service": "IBKR",
+      "fixture_kind": "documented-host"
+    },
+    {
+      "id": "finance-082",
+      "host": "download.interactivebrokers.com",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "IBKR 官方客户端门户/API/更新主机保持直连。",
+      "service": "IBKR",
+      "fixture_kind": "documented-host"
+    },
+    {
+      "id": "finance-083",
+      "host": "trade.thinkorswim.com",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "Schwab 账户登录的 thinkorswim 网页端。",
+      "service": "嘉信",
+      "fixture_kind": "documented-host"
+    },
+    {
+      "id": "finance-084",
+      "host": "h2static.wotransfer.com",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "Starryblu 官方联系页实际引用的图片资源域。",
+      "service": "Starryblu",
+      "fixture_kind": "documented-host"
+    },
+    {
+      "id": "finance-085",
+      "host": "openapi.okx.com",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "OKX 官方 REST/WebSocket/地区入口应服从已授权固定直连。",
+      "service": "OKX",
+      "fixture_kind": "documented-host"
+    },
+    {
+      "id": "finance-086",
+      "host": "ws.okx.com",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "OKX 官方 REST/WebSocket/地区入口应服从已授权固定直连。",
+      "service": "OKX",
+      "fixture_kind": "documented-host"
+    },
+    {
+      "id": "finance-087",
+      "host": "us.okx.com",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "OKX 官方 REST/WebSocket/地区入口应服从已授权固定直连。",
+      "service": "OKX",
+      "fixture_kind": "documented-host"
+    },
+    {
+      "id": "finance-088",
+      "host": "eea.okx.com",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DIRECT",
+      "expected_rule_policy_any": [
+        "DIRECT"
+      ],
+      "description": "OKX 官方 REST/WebSocket/地区入口应服从已授权固定直连。",
+      "service": "OKX",
+      "fixture_kind": "documented-host"
+    },
+    {
+      "id": "finance-089",
+      "host": "coinbase.com",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DMIT-LAX-TLS",
+      "expected_rule_policy_any": [
+        "Coinbase",
+        "DMIT-LAX-TLS"
+      ],
+      "description": "Coinbase 必须解析到固定 DMIT LAX，不可因主力组改选而变化。",
+      "service": "Coinbase",
+      "fixture_kind": "host-policy-scope"
+    },
+    {
+      "id": "finance-090",
+      "host": "login.coinbase.com",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DMIT-LAX-TLS",
+      "expected_rule_policy_any": [
+        "Coinbase",
+        "DMIT-LAX-TLS"
+      ],
+      "description": "Coinbase 必须解析到固定 DMIT LAX，不可因主力组改选而变化。",
+      "service": "Coinbase",
+      "fixture_kind": "host-policy-scope"
+    },
+    {
+      "id": "finance-091",
+      "host": "api.coinbase.com",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DMIT-LAX-TLS",
+      "expected_rule_policy_any": [
+        "Coinbase",
+        "DMIT-LAX-TLS"
+      ],
+      "description": "Coinbase 必须解析到固定 DMIT LAX，不可因主力组改选而变化。",
+      "service": "Coinbase",
+      "fixture_kind": "host-policy-scope"
+    },
+    {
+      "id": "finance-092",
+      "host": "advanced-trade-ws.coinbase.com",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DMIT-LAX-TLS",
+      "expected_rule_policy_any": [
+        "Coinbase",
+        "DMIT-LAX-TLS"
+      ],
+      "description": "Coinbase 必须解析到固定 DMIT LAX，不可因主力组改选而变化。",
+      "service": "Coinbase",
+      "fixture_kind": "host-policy-scope"
+    },
+    {
+      "id": "finance-093",
+      "host": "bybit.com",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "🇨🇳 台湾高级 IEPL 专线 1",
+      "expected_rule_policy_any": [
+        "Bybit",
+        "🇨🇳 台湾高级 IEPL 专线 1"
+      ],
+      "description": "保留 v30 已有 Bybit 域范围，只允许台湾高级专线 1。",
+      "service": "Bybit",
+      "fixture_kind": "legacy-root",
+      "expected_policy_aliases": [
+        "台湾高级 IEPL 专线 1",
+        "🇹🇼 台湾高级 IEPL 专线 1"
+      ]
+    },
+    {
+      "id": "finance-094",
+      "host": "boundary-check.bybit.com",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "🇨🇳 台湾高级 IEPL 专线 1",
+      "expected_rule_policy_any": [
+        "Bybit",
+        "🇨🇳 台湾高级 IEPL 专线 1"
+      ],
+      "description": "保留 v30 已有 Bybit 域范围，只允许台湾高级专线 1。",
+      "service": "Bybit",
+      "fixture_kind": "synthetic-subdomain",
+      "expected_policy_aliases": [
+        "台湾高级 IEPL 专线 1",
+        "🇹🇼 台湾高级 IEPL 专线 1"
+      ]
+    },
+    {
+      "id": "finance-095",
+      "host": "bybit.biz",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "🇨🇳 台湾高级 IEPL 专线 1",
+      "expected_rule_policy_any": [
+        "Bybit",
+        "🇨🇳 台湾高级 IEPL 专线 1"
+      ],
+      "description": "保留 v30 已有 Bybit 域范围，只允许台湾高级专线 1。",
+      "service": "Bybit",
+      "fixture_kind": "legacy-root",
+      "expected_policy_aliases": [
+        "台湾高级 IEPL 专线 1",
+        "🇹🇼 台湾高级 IEPL 专线 1"
+      ]
+    },
+    {
+      "id": "finance-096",
+      "host": "boundary-check.bybit.biz",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "🇨🇳 台湾高级 IEPL 专线 1",
+      "expected_rule_policy_any": [
+        "Bybit",
+        "🇨🇳 台湾高级 IEPL 专线 1"
+      ],
+      "description": "保留 v30 已有 Bybit 域范围，只允许台湾高级专线 1。",
+      "service": "Bybit",
+      "fixture_kind": "synthetic-subdomain",
+      "expected_policy_aliases": [
+        "台湾高级 IEPL 专线 1",
+        "🇹🇼 台湾高级 IEPL 专线 1"
+      ]
+    },
+    {
+      "id": "finance-097",
+      "host": "bybdc6.com",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "🇨🇳 台湾高级 IEPL 专线 1",
+      "expected_rule_policy_any": [
+        "Bybit",
+        "🇨🇳 台湾高级 IEPL 专线 1"
+      ],
+      "description": "保留 v30 已有 Bybit 域范围，只允许台湾高级专线 1。",
+      "service": "Bybit",
+      "fixture_kind": "legacy-root",
+      "expected_policy_aliases": [
+        "台湾高级 IEPL 专线 1",
+        "🇹🇼 台湾高级 IEPL 专线 1"
+      ]
+    },
+    {
+      "id": "finance-098",
+      "host": "boundary-check.bybdc6.com",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "🇨🇳 台湾高级 IEPL 专线 1",
+      "expected_rule_policy_any": [
+        "Bybit",
+        "🇨🇳 台湾高级 IEPL 专线 1"
+      ],
+      "description": "保留 v30 已有 Bybit 域范围，只允许台湾高级专线 1。",
+      "service": "Bybit",
+      "fixture_kind": "synthetic-subdomain",
+      "expected_policy_aliases": [
+        "台湾高级 IEPL 专线 1",
+        "🇹🇼 台湾高级 IEPL 专线 1"
+      ]
+    },
+    {
+      "id": "finance-099",
+      "host": "byabcde.com",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "🇨🇳 台湾高级 IEPL 专线 1",
+      "expected_rule_policy_any": [
+        "Bybit",
+        "🇨🇳 台湾高级 IEPL 专线 1"
+      ],
+      "description": "保留 v30 已有 Bybit 域范围，只允许台湾高级专线 1。",
+      "service": "Bybit",
+      "fixture_kind": "legacy-root",
+      "expected_policy_aliases": [
+        "台湾高级 IEPL 专线 1",
+        "🇹🇼 台湾高级 IEPL 专线 1"
+      ]
+    },
+    {
+      "id": "finance-100",
+      "host": "boundary-check.byabcde.com",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "🇨🇳 台湾高级 IEPL 专线 1",
+      "expected_rule_policy_any": [
+        "Bybit",
+        "🇨🇳 台湾高级 IEPL 专线 1"
+      ],
+      "description": "保留 v30 已有 Bybit 域范围，只允许台湾高级专线 1。",
+      "service": "Bybit",
+      "fixture_kind": "synthetic-subdomain",
+      "expected_policy_aliases": [
+        "台湾高级 IEPL 专线 1",
+        "🇹🇼 台湾高级 IEPL 专线 1"
+      ]
+    },
+    {
+      "id": "finance-101",
+      "host": "byapps.net",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "🇨🇳 台湾高级 IEPL 专线 1",
+      "expected_rule_policy_any": [
+        "Bybit",
+        "🇨🇳 台湾高级 IEPL 专线 1"
+      ],
+      "description": "保留 v30 已有 Bybit 域范围，只允许台湾高级专线 1。",
+      "service": "Bybit",
+      "fixture_kind": "legacy-root",
+      "expected_policy_aliases": [
+        "台湾高级 IEPL 专线 1",
+        "🇹🇼 台湾高级 IEPL 专线 1"
+      ]
+    },
+    {
+      "id": "finance-102",
+      "host": "boundary-check.byapps.net",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "🇨🇳 台湾高级 IEPL 专线 1",
+      "expected_rule_policy_any": [
+        "Bybit",
+        "🇨🇳 台湾高级 IEPL 专线 1"
+      ],
+      "description": "保留 v30 已有 Bybit 域范围，只允许台湾高级专线 1。",
+      "service": "Bybit",
+      "fixture_kind": "synthetic-subdomain",
+      "expected_policy_aliases": [
+        "台湾高级 IEPL 专线 1",
+        "🇹🇼 台湾高级 IEPL 专线 1"
+      ]
+    },
+    {
+      "id": "finance-103",
+      "host": "bybit-aws.com",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "🇨🇳 台湾高级 IEPL 专线 1",
+      "expected_rule_policy_any": [
+        "Bybit",
+        "🇨🇳 台湾高级 IEPL 专线 1"
+      ],
+      "description": "保留 v30 已有 Bybit 域范围，只允许台湾高级专线 1。",
+      "service": "Bybit",
+      "fixture_kind": "legacy-root",
+      "expected_policy_aliases": [
+        "台湾高级 IEPL 专线 1",
+        "🇹🇼 台湾高级 IEPL 专线 1"
+      ]
+    },
+    {
+      "id": "finance-104",
+      "host": "boundary-check.bybit-aws.com",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "🇨🇳 台湾高级 IEPL 专线 1",
+      "expected_rule_policy_any": [
+        "Bybit",
+        "🇨🇳 台湾高级 IEPL 专线 1"
+      ],
+      "description": "保留 v30 已有 Bybit 域范围，只允许台湾高级专线 1。",
+      "service": "Bybit",
+      "fixture_kind": "synthetic-subdomain",
+      "expected_policy_aliases": [
+        "台湾高级 IEPL 专线 1",
+        "🇹🇼 台湾高级 IEPL 专线 1"
+      ]
+    },
+    {
+      "id": "finance-105",
+      "host": "api.bytick.com",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "🇨🇳 台湾高级 IEPL 专线 1",
+      "expected_rule_policy_any": [
+        "Bybit",
+        "🇨🇳 台湾高级 IEPL 专线 1"
+      ],
+      "description": "Bybit 官方第二主网 REST 域不能落 Global/LAX。",
+      "service": "Bybit",
+      "fixture_kind": "documented-host",
+      "expected_policy_aliases": [
+        "台湾高级 IEPL 专线 1",
+        "🇹🇼 台湾高级 IEPL 专线 1"
+      ]
+    },
+    {
+      "id": "finance-106",
+      "host": "safepal.com",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DMIT-LAX-TLS",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "description": "Safepal 保留海外主力；此终点是主力默认选择，不要求将其永久锁 LAX。",
+      "service": "Safepal",
+      "fixture_kind": "legacy-root",
+      "overrides": {
+        "海外主力": "DMIT-LAX-TLS"
+      }
+    },
+    {
+      "id": "finance-107",
+      "host": "boundary-check.safepal.com",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DMIT-LAX-TLS",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "description": "Safepal 保留海外主力；此终点是主力默认选择，不要求将其永久锁 LAX。",
+      "service": "Safepal",
+      "fixture_kind": "synthetic-subdomain",
+      "overrides": {
+        "海外主力": "DMIT-LAX-TLS"
+      }
+    },
+    {
+      "id": "finance-108",
+      "host": "n26.com.invalid",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DMIT-LAX-TLS",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "description": "保留 .invalid 合成负样本：域名包含品牌不等于金融域后缀，不能误命中金融直连/Bybit。",
+      "service": "boundary-negative",
+      "fixture_kind": "synthetic-negative",
+      "overrides": {
+        "海外主力": "DMIT-LAX-TLS"
+      },
+      "must_not_match_financial_rule": true
+    },
+    {
+      "id": "finance-109",
+      "host": "api.n26.com.invalid",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DMIT-LAX-TLS",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "description": "保留 .invalid 合成负样本：域名包含品牌不等于金融域后缀，不能误命中金融直连/Bybit。",
+      "service": "boundary-negative",
+      "fixture_kind": "synthetic-negative",
+      "overrides": {
+        "海外主力": "DMIT-LAX-TLS"
+      },
+      "must_not_match_financial_rule": true
+    },
+    {
+      "id": "finance-110",
+      "host": "number26.de.invalid",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DMIT-LAX-TLS",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "description": "保留 .invalid 合成负样本：域名包含品牌不等于金融域后缀，不能误命中金融直连/Bybit。",
+      "service": "boundary-negative",
+      "fixture_kind": "synthetic-negative",
+      "overrides": {
+        "海外主力": "DMIT-LAX-TLS"
+      },
+      "must_not_match_financial_rule": true
+    },
+    {
+      "id": "finance-111",
+      "host": "tech26.de.invalid",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DMIT-LAX-TLS",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "description": "保留 .invalid 合成负样本：域名包含品牌不等于金融域后缀，不能误命中金融直连/Bybit。",
+      "service": "boundary-negative",
+      "fixture_kind": "synthetic-negative",
+      "overrides": {
+        "海外主力": "DMIT-LAX-TLS"
+      },
+      "must_not_match_financial_rule": true
+    },
+    {
+      "id": "finance-112",
+      "host": "api.tech26.de.invalid",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DMIT-LAX-TLS",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "description": "保留 .invalid 合成负样本：域名包含品牌不等于金融域后缀，不能误命中金融直连/Bybit。",
+      "service": "boundary-negative",
+      "fixture_kind": "synthetic-negative",
+      "overrides": {
+        "海外主力": "DMIT-LAX-TLS"
+      },
+      "must_not_match_financial_rule": true
+    },
+    {
+      "id": "finance-113",
+      "host": "notn26.invalid",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DMIT-LAX-TLS",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "description": "保留 .invalid 合成负样本：域名包含品牌不等于金融域后缀，不能误命中金融直连/Bybit。",
+      "service": "boundary-negative",
+      "fixture_kind": "synthetic-negative",
+      "overrides": {
+        "海外主力": "DMIT-LAX-TLS"
+      },
+      "must_not_match_financial_rule": true
+    },
+    {
+      "id": "finance-114",
+      "host": "n26-login.invalid",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DMIT-LAX-TLS",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "description": "保留 .invalid 合成负样本：域名包含品牌不等于金融域后缀，不能误命中金融直连/Bybit。",
+      "service": "boundary-negative",
+      "fixture_kind": "synthetic-negative",
+      "overrides": {
+        "海外主力": "DMIT-LAX-TLS"
+      },
+      "must_not_match_financial_rule": true
+    },
+    {
+      "id": "finance-115",
+      "host": "not-tech26.invalid",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DMIT-LAX-TLS",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "description": "保留 .invalid 合成负样本：域名包含品牌不等于金融域后缀，不能误命中金融直连/Bybit。",
+      "service": "boundary-negative",
+      "fixture_kind": "synthetic-negative",
+      "overrides": {
+        "海外主力": "DMIT-LAX-TLS"
+      },
+      "must_not_match_financial_rule": true
+    },
+    {
+      "id": "finance-116",
+      "host": "wise.com.invalid",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DMIT-LAX-TLS",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "description": "保留 .invalid 合成负样本：域名包含品牌不等于金融域后缀，不能误命中金融直连/Bybit。",
+      "service": "boundary-negative",
+      "fixture_kind": "synthetic-negative",
+      "overrides": {
+        "海外主力": "DMIT-LAX-TLS"
+      },
+      "must_not_match_financial_rule": true
+    },
+    {
+      "id": "finance-117",
+      "host": "api.wise.com.invalid",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DMIT-LAX-TLS",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "description": "保留 .invalid 合成负样本：域名包含品牌不等于金融域后缀，不能误命中金融直连/Bybit。",
+      "service": "boundary-negative",
+      "fixture_kind": "synthetic-negative",
+      "overrides": {
+        "海外主力": "DMIT-LAX-TLS"
+      },
+      "must_not_match_financial_rule": true
+    },
+    {
+      "id": "finance-118",
+      "host": "interactivebrokers.com.invalid",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DMIT-LAX-TLS",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "description": "保留 .invalid 合成负样本：域名包含品牌不等于金融域后缀，不能误命中金融直连/Bybit。",
+      "service": "boundary-negative",
+      "fixture_kind": "synthetic-negative",
+      "overrides": {
+        "海外主力": "DMIT-LAX-TLS"
+      },
+      "must_not_match_financial_rule": true
+    },
+    {
+      "id": "finance-119",
+      "host": "ndc1.ibllc.com.invalid",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DMIT-LAX-TLS",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "description": "保留 .invalid 合成负样本：域名包含品牌不等于金融域后缀，不能误命中金融直连/Bybit。",
+      "service": "boundary-negative",
+      "fixture_kind": "synthetic-negative",
+      "overrides": {
+        "海外主力": "DMIT-LAX-TLS"
+      },
+      "must_not_match_financial_rule": true
+    },
+    {
+      "id": "finance-120",
+      "host": "schwab.com.invalid",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DMIT-LAX-TLS",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "description": "保留 .invalid 合成负样本：域名包含品牌不等于金融域后缀，不能误命中金融直连/Bybit。",
+      "service": "boundary-negative",
+      "fixture_kind": "synthetic-negative",
+      "overrides": {
+        "海外主力": "DMIT-LAX-TLS"
+      },
+      "must_not_match_financial_rule": true
+    },
+    {
+      "id": "finance-121",
+      "host": "trade.thinkorswim.com.invalid",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DMIT-LAX-TLS",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "description": "保留 .invalid 合成负样本：域名包含品牌不等于金融域后缀，不能误命中金融直连/Bybit。",
+      "service": "boundary-negative",
+      "fixture_kind": "synthetic-negative",
+      "overrides": {
+        "海外主力": "DMIT-LAX-TLS"
+      },
+      "must_not_match_financial_rule": true
+    },
+    {
+      "id": "finance-122",
+      "host": "starryblu.com.invalid",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DMIT-LAX-TLS",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "description": "保留 .invalid 合成负样本：域名包含品牌不等于金融域后缀，不能误命中金融直连/Bybit。",
+      "service": "boundary-negative",
+      "fixture_kind": "synthetic-negative",
+      "overrides": {
+        "海外主力": "DMIT-LAX-TLS"
+      },
+      "must_not_match_financial_rule": true
+    },
+    {
+      "id": "finance-123",
+      "host": "wotransfer.com.invalid",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DMIT-LAX-TLS",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "description": "保留 .invalid 合成负样本：域名包含品牌不等于金融域后缀，不能误命中金融直连/Bybit。",
+      "service": "boundary-negative",
+      "fixture_kind": "synthetic-negative",
+      "overrides": {
+        "海外主力": "DMIT-LAX-TLS"
+      },
+      "must_not_match_financial_rule": true
+    },
+    {
+      "id": "finance-124",
+      "host": "okx.com.invalid",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DMIT-LAX-TLS",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "description": "保留 .invalid 合成负样本：域名包含品牌不等于金融域后缀，不能误命中金融直连/Bybit。",
+      "service": "boundary-negative",
+      "fixture_kind": "synthetic-negative",
+      "overrides": {
+        "海外主力": "DMIT-LAX-TLS"
+      },
+      "must_not_match_financial_rule": true
+    },
+    {
+      "id": "finance-125",
+      "host": "api.bytick.com.invalid",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DMIT-LAX-TLS",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "description": "保留 .invalid 合成负样本：域名包含品牌不等于金融域后缀，不能误命中金融直连/Bybit。",
+      "service": "boundary-negative",
+      "fixture_kind": "synthetic-negative",
+      "overrides": {
+        "海外主力": "DMIT-LAX-TLS"
+      },
+      "must_not_match_financial_rule": true
+    },
+    {
+      "id": "finance-126",
+      "host": "bytick.com",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DMIT-LAX-TLS",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "description": "本次采用 DOMAIN,api.bytick.com 精确补充时，其他 bytick 主机不应被误扩大覆盖；若root审定改为suffix，需同步明确更改这项范围预期。",
+      "service": "Bybit-exact-scope-negative",
+      "fixture_kind": "scope-negative",
+      "overrides": {
+        "海外主力": "DMIT-LAX-TLS"
+      },
+      "applies_if": "api.bytick.com is configured as DOMAIN, not DOMAIN-SUFFIX"
+    },
+    {
+      "id": "finance-127",
+      "host": "www.bytick.com",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DMIT-LAX-TLS",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "description": "本次采用 DOMAIN,api.bytick.com 精确补充时，其他 bytick 主机不应被误扩大覆盖；若root审定改为suffix，需同步明确更改这项范围预期。",
+      "service": "Bybit-exact-scope-negative",
+      "fixture_kind": "scope-negative",
+      "overrides": {
+        "海外主力": "DMIT-LAX-TLS"
+      },
+      "applies_if": "api.bytick.com is configured as DOMAIN, not DOMAIN-SUFFIX"
+    },
+    {
+      "id": "finance-128",
+      "host": "child.api.bytick.com",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DMIT-LAX-TLS",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "description": "本次采用 DOMAIN,api.bytick.com 精确补充时，其他 bytick 主机不应被误扩大覆盖；若root审定改为suffix，需同步明确更改这项范围预期。",
+      "service": "Bybit-exact-scope-negative",
+      "fixture_kind": "scope-negative",
+      "overrides": {
+        "海外主力": "DMIT-LAX-TLS"
+      },
+      "applies_if": "api.bytick.com is configured as DOMAIN, not DOMAIN-SUFFIX"
+    },
+    {
+      "id": "finance-129",
+      "host": "notn26.com",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DMIT-LAX-TLS",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "description": "仅做离线字符串边界验证，不宣称该名字实际存在或恶意；缺少标签边界的近似根域不得命中金融规则。",
+      "service": "boundary-negative",
+      "fixture_kind": "synthetic-negative-no-network",
+      "overrides": {
+        "海外主力": "DMIT-LAX-TLS"
+      },
+      "must_not_match_financial_rule": true
+    },
+    {
+      "id": "finance-130",
+      "host": "notnumber26.de",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DMIT-LAX-TLS",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "description": "仅做离线字符串边界验证，不宣称该名字实际存在或恶意；缺少标签边界的近似根域不得命中金融规则。",
+      "service": "boundary-negative",
+      "fixture_kind": "synthetic-negative-no-network",
+      "overrides": {
+        "海外主力": "DMIT-LAX-TLS"
+      },
+      "must_not_match_financial_rule": true
+    },
+    {
+      "id": "finance-131",
+      "host": "nottech26.de",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DMIT-LAX-TLS",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "description": "仅做离线字符串边界验证，不宣称该名字实际存在或恶意；缺少标签边界的近似根域不得命中金融规则。",
+      "service": "boundary-negative",
+      "fixture_kind": "synthetic-negative-no-network",
+      "overrides": {
+        "海外主力": "DMIT-LAX-TLS"
+      },
+      "must_not_match_financial_rule": true
+    },
+    {
+      "id": "finance-132",
+      "host": "api.nottech26.de",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DMIT-LAX-TLS",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "description": "仅做离线字符串边界验证，不宣称该名字实际存在或恶意；缺少标签边界的近似根域不得命中金融规则。",
+      "service": "boundary-negative",
+      "fixture_kind": "synthetic-negative-no-network",
+      "overrides": {
+        "海外主力": "DMIT-LAX-TLS"
+      },
+      "must_not_match_financial_rule": true
+    },
+    {
+      "id": "finance-133",
+      "host": "notwise.com",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DMIT-LAX-TLS",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "description": "仅做离线字符串边界验证，不宣称该名字实际存在或恶意；缺少标签边界的近似根域不得命中金融规则。",
+      "service": "boundary-negative",
+      "fixture_kind": "synthetic-negative-no-network",
+      "overrides": {
+        "海外主力": "DMIT-LAX-TLS"
+      },
+      "must_not_match_financial_rule": true
+    },
+    {
+      "id": "finance-134",
+      "host": "notibllc.com",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DMIT-LAX-TLS",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "description": "仅做离线字符串边界验证，不宣称该名字实际存在或恶意；缺少标签边界的近似根域不得命中金融规则。",
+      "service": "boundary-negative",
+      "fixture_kind": "synthetic-negative-no-network",
+      "overrides": {
+        "海外主力": "DMIT-LAX-TLS"
+      },
+      "must_not_match_financial_rule": true
+    },
+    {
+      "id": "finance-135",
+      "host": "notschwab.com",
+      "protocol": "TCP",
+      "port": 443,
+      "expected_policy": "DMIT-LAX-TLS",
+      "expected_rule_policy_any": [
+        "海外主力"
+      ],
+      "description": "仅做离线字符串边界验证，不宣称该名字实际存在或恶意；缺少标签边界的近似根域不得命中金融规则。",
+      "service": "boundary-negative",
+      "fixture_kind": "synthetic-negative-no-network",
+      "overrides": {
+        "海外主力": "DMIT-LAX-TLS"
+      },
+      "must_not_match_financial_rule": true
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "version": "v31",
+  "reviewed_date": "2026-11-27",
+  "baseline_commit": "47e87c59ada75782aa12f4600a65dd8f3eb65463",
+  "rules_commit": "0b68b068bf90011c5b908395d02d92832ed91c0f",
+  "upstream_commit": "0b6897dc17e0c513d25449c935a9694818e32f0c",
+  "canonical_update_url": "https://raw.githubusercontent.com/DeshengKong/Hellow-World/master/shadowrocket/we-neuro-shadowrocket.conf",
+  "entry_points": [
+    "we-neuro-shadowrocket.conf",
+    "we-neuro-shadowrocket-home.conf"
+  ],
+  "profile_sha256": "7e3a5813678e0a7779346ffe80a6be03c3ffb6f4b407f04b45cef21bbdf95cca",
+  "profile_git_blob": "4cb22016f9eb2f854703dc5fd911515c70428eed",
+  "validation": {
+    "static_suites": 10,
+    "financial_cases": 135,
+    "other_routing_cases": 250,
+    "financial_selection_rechecks": 270,
+    "bybit_name_cases": 12,
+    "pinned_sources_verified": 49,
+    "snapshots": 24,
+    "snapshot_domain_records": 45102,
+    "scoped_domain_exclusions": 89,
+    "manual_groups": 34,
+    "top_level_rules": 260,
+    "ip_cidr_rules": 41,
+    "native_device_acceptance": "pending: no access to the user iPhone or Mac runtime",
+    "static_model_limitations": "No native engine, DNS transport, actual node inventory/egress, app attribution, system bypass, modules, cache or historical login reproduction."
+  }
+}
